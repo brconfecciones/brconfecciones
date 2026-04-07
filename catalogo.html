@@ -6,21 +6,59 @@
   <title>Catálogo – BR Confecciones</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
   <style>
-    body { margin: 0; font-family: 'Montserrat', sans-serif; background: #1b1410; color: #fff; text-align: center; }
+    body { margin: 0; font-family: 'Montserrat', sans-serif; background: #1b1410; color: #fff; text-align: center; min-height: 100vh; }
     header { padding: 50px 20px; background: rgba(0,0,0,0.3); border-bottom: 1px solid #3a2e25; }
-    h1 { font-family: 'Cormorant Garamond', serif; color: #f5e6cc; font-size: 2.8rem; margin: 0; }
+    h1 { font-family: 'Cormorant Garamond', serif; color: #f5e6cc; font-size: 2.8rem; margin: 0; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
+    
     .productos { display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; padding: 40px 20px; max-width: 1200px; margin: 0 auto; }
-    .card { width: 300px; background: rgba(42, 32, 25, 0.9); border: 1px solid #4a3b2f; border-radius: 15px; overflow: hidden; transition: 0.3s; box-shadow: 0 10px 20px rgba(0,0,0,0.5); }
+    
+    .card { 
+      width: 300px; 
+      background: rgba(42, 32, 25, 0.9); 
+      border: 1px solid #4a3b2f; 
+      border-radius: 15px; 
+      overflow: hidden; 
+      transition: 0.3s; 
+      box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+      display: flex;
+      flex-direction: column;
+    }
+    
     .card:hover { transform: translateY(-10px); border-color: #d4af37; box-shadow: 0 0 20px rgba(212, 175, 55, 0.2); }
-    .card img { width: 100%; height: 250px; object-fit: cover; border-bottom: 1px solid #3a2e25; }
-    .info { padding: 20px; }
+    
+    /* AJUSTE PARA QUE LA FOTO SE VEA COMPLETA */
+    .card img { 
+      width: 100%; 
+      height: 400px; /* Altura ideal para fotos verticales de disfraces */
+      object-fit: contain; /* Muestra la imagen entera sin recortar */
+      background-color: #140e0a; /* Fondo oscuro si la foto es angosta */
+      border-bottom: 1px solid #3a2e25;
+    }
+    
+    .info { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
     .info h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: #f5e6cc; margin: 0 0 10px; }
-    .precio { color: #d4af37; font-weight: 600; font-size: 1.3rem; margin: 10px 0; }
-    .desc { font-size: 0.9rem; color: #ccc; min-height: 40px; }
-    .btn-wsp { display: block; background: #25d366; color: #fff; text-decoration: none; padding: 12px; border-radius: 30px; font-weight: bold; margin-top: 15px; transition: 0.3s; }
+    
+    .precio { color: #d4af37; font-weight: 600; font-size: 1.4rem; margin: 10px 0; }
+    .desc { font-size: 0.95rem; color: #ccc; min-height: 45px; line-height: 1.4; margin-bottom: 15px; }
+    
+    .btn-wsp { 
+      display: block; 
+      background: #25d366; 
+      color: #fff; 
+      text-decoration: none; 
+      padding: 14px; 
+      border-radius: 30px; 
+      font-weight: bold; 
+      margin-top: auto; 
+      transition: 0.3s; 
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
     .btn-wsp:hover { background: #128c7e; transform: scale(1.05); }
+    
     .volver { display: inline-block; margin-top: 20px; color: #f5e6cc; text-decoration: none; font-size: 0.9rem; opacity: 0.8; }
     .volver:hover { opacity: 1; text-decoration: underline; }
+    
+    footer { padding: 40px; color: #666; font-size: 0.8rem; }
   </style>
 </head>
 <body>
@@ -31,23 +69,33 @@
 </header>
 
 <div id="contenedor-productos" class="productos">
-  <p style="color: #f5e6cc;">Abriendo el taller...</p>
+  <p style="color: #f5e6cc; font-family: 'Cormorant Garamond', serif; font-size: 1.5rem;">Abriendo el taller...</p>
 </div>
 
+<footer>
+  BR Confecciones — Capilla del Monte, Córdoba<br>© 2026.
+</footer>
+
 <script>
+  // ID de tu planilla de Google
   const SHEET_ID = '1fczLyhidq7xLFh6LwONnqn_uGoAqujCSGzTRfgKwxrA';
+  // Enlace al CSV publicado (Asegurate que en el Excel diga: Publicar Hoja 1 como .CSV)
   const URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&gid=0`;
 
   async function cargarCatalogo() {
     try {
       const respuesta = await fetch(URL);
       const csv = await respuesta.text();
+      
+      // Separamos por líneas y quitamos la primera (cabecera)
       const filas = csv.split(/\r?\n/).slice(1);
       const contenedor = document.getElementById('contenedor-productos');
       let htmlFinal = '';
 
       filas.forEach(linea => {
+        // Separamos columnas respetando comas internas
         const c = linea.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
+        
         if (c.length < 5) return;
 
         const nombre = c[0].replace(/"/g, '');
@@ -56,10 +104,11 @@
         let   imgRaw = c[3].replace(/"/g, '').trim();
         const estado = c[4].replace(/"/g, '').trim().toLowerCase();
 
+        // Solo mostramos productos con estado "activo"
         if (estado === 'activo') {
           let finalImg = '';
           
-          // --- MOTOR DE DETECCIÓN DE ID ---
+          // --- MOTOR INTELIGENTE PARA IMÁGENES ---
           if (imgRaw.includes('drive.google.com')) {
               let id = '';
               if (imgRaw.includes('id=')) {
@@ -67,8 +116,8 @@
               } else if (imgRaw.includes('/d/')) {
                   id = imgRaw.split('/d/')[1].split('/')[0];
               }
-              // Usamos el link que menos falla
-              finalImg = `https://lh3.googleusercontent.com/u/0/d/${id}`;
+              // Servidor LH3: el más rápido y estable para mostrar fotos de Drive
+              finalImg = `https://lh3.googleusercontent.com/d/${id}`;
           } else {
               finalImg = imgRaw;
           }
@@ -77,21 +126,30 @@
             <div class="card">
               <img src="${finalImg}" alt="${nombre}" loading="lazy">
               <div class="info">
-                <h3>${nombre}</h3>
-                <p class="desc">${desc}</p>
-                <p class="precio">$${precio} ARS</p>
-                <a href="https://wa.me/543548584454?text=Hola!%20Me%20interesa%20${encodeURIComponent(nombre)}" class="btn-wsp">
-                  💬 Consultar por WhatsApp
-                </a>
+                <div>
+                  <h3>${nombre}</h3>
+                  <p class="desc">${desc}</p>
+                </div>
+                <div>
+                  <p class="precio">$${precio} ARS</p>
+                  <a href="https://wa.me/543548584454?text=Hola!%20Me%20interesa%20el%20producto:%20${encodeURIComponent(nombre)}" class="btn-wsp">
+                    💬 Consultar por WhatsApp
+                  </a>
+                </div>
               </div>
             </div>`;
         }
       });
-      contenedor.innerHTML = htmlFinal || '<p>No hay productos activos.</p>';
+
+      contenedor.innerHTML = htmlFinal || '<p>No hay productos activos en este momento.</p>';
+      
     } catch (error) {
-      document.getElementById('contenedor-productos').innerHTML = '<p>Error de conexión.</p>';
+      console.error("Error al cargar:", error);
+      document.getElementById('contenedor-productos').innerHTML = 
+        '<p style="color: #f5e6cc;">Error al conectar con el catálogo. Verificá la publicación en el Excel.</p>';
     }
   }
+
   cargarCatalogo();
 </script>
 </body>
