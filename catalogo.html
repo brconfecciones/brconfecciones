@@ -35,9 +35,7 @@
 </div>
 
 <script>
-  // Tu ID de planilla (Está perfecto)
   const SHEET_ID = '1fczLyhidq7xLFh6LwONnqn_uGoAqujCSGzTRfgKwxrA';
-  // Formato CSV publicado (También está perfecto)
   const URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&gid=0`;
 
   async function cargarCatalogo() {
@@ -55,42 +53,42 @@
         const nombre = c[0].replace(/"/g, '');
         const precio = c[1].replace(/"/g, '');
         const desc   = c[2].replace(/"/g, '');
-        let   img    = c[3].replace(/"/g, '').trim(); // Limpiamos espacios
+        let   imgRaw = c[3].replace(/"/g, '').trim();
         const estado = c[4].replace(/"/g, '').trim().toLowerCase();
 
         if (estado === 'activo') {
-          // CORRECCIÓN MAGICA: Convertir CUALQUIER link de Drive
-          if (img.includes('drive.google.com')) {
+          let finalImg = '';
+          
+          // --- MOTOR DE DETECCIÓN DE ID ---
+          if (imgRaw.includes('drive.google.com')) {
               let id = '';
-              // Caso 1: Link con ?id=XXXX
-              if (img.includes('id=')) {
-                  id = img.split('id=')[1].split('&')[0];
-              } 
-              // Caso 2: Link con /file/d/XXXX/view
-              else if (img.includes('/d/')) {
-                  id = img.split('/d/')[1].split('/')[0];
+              if (imgRaw.includes('id=')) {
+                  id = imgRaw.split('id=')[1].split('&')[0];
+              } else if (imgRaw.includes('/d/')) {
+                  id = imgRaw.split('/d/')[1].split('/')[0];
               }
-              // Construimos el link de visualización directa universal
-              img = `https://drive.google.com/uc?id=${id}`;
+              // Usamos el link que menos falla
+              finalImg = `https://lh3.googleusercontent.com/u/0/d/${id}`;
+          } else {
+              finalImg = imgRaw;
           }
 
           htmlFinal += `
             <div class="card">
-              <img src="${img}" alt="${nombre}" onerror="this.src='https://via.placeholder.com/300x250?text=Foto+en+proceso'">
+              <img src="${finalImg}" alt="${nombre}" loading="lazy">
               <div class="info">
                 <h3>${nombre}</h3>
                 <p class="desc">${desc}</p>
                 <p class="precio">$${precio} ARS</p>
-                <a href="https://wa.me/543548584454?text=Hola!%20Me%20interesa%20el%20producto:%20${encodeURIComponent(nombre)}" class="btn-wsp">
+                <a href="https://wa.me/543548584454?text=Hola!%20Me%20interesa%20${encodeURIComponent(nombre)}" class="btn-wsp">
                   💬 Consultar por WhatsApp
                 </a>
               </div>
             </div>`;
         }
       });
-      contenedor.innerHTML = htmlFinal || '<p>Cargando productos...</p>';
+      contenedor.innerHTML = htmlFinal || '<p>No hay productos activos.</p>';
     } catch (error) {
-      console.error(error);
       document.getElementById('contenedor-productos').innerHTML = '<p>Error de conexión.</p>';
     }
   }
