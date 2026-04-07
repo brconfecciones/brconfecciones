@@ -35,42 +35,48 @@
 </div>
 
 <script>
+  // Tu ID de planilla (Está perfecto)
   const SHEET_ID = '1fczLyhidq7xLFh6LwONnqn_uGoAqujCSGzTRfgKwxrA';
-  // Accedemos al CSV publicado de la Hoja 1
+  // Formato CSV publicado (También está perfecto)
   const URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&gid=0`;
 
   async function cargarCatalogo() {
     try {
       const respuesta = await fetch(URL);
       const csv = await respuesta.text();
-      
-      // Separamos por líneas y eliminamos la primera (títulos)
       const filas = csv.split(/\r?\n/).slice(1);
       const contenedor = document.getElementById('contenedor-productos');
       let htmlFinal = '';
 
       filas.forEach(linea => {
-        // Regex para separar por comas ignorando las comas dentro de comillas
         const c = linea.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
-        
         if (c.length < 5) return;
 
         const nombre = c[0].replace(/"/g, '');
         const precio = c[1].replace(/"/g, '');
         const desc   = c[2].replace(/"/g, '');
-        let   img    = c[3].replace(/"/g, '');
+        let   img    = c[3].replace(/"/g, '').trim(); // Limpiamos espacios
         const estado = c[4].replace(/"/g, '').trim().toLowerCase();
 
         if (estado === 'activo') {
-          // Limpiar link de Google Drive para visualización directa
+          // CORRECCIÓN MAGICA: Convertir CUALQUIER link de Drive
           if (img.includes('drive.google.com')) {
-            const id = img.match(/[-\w]{25,}/);
-            if (id) img = `https://drive.google.com/uc?export=view&id=${id[0]}`;
+              let id = '';
+              // Caso 1: Link con ?id=XXXX
+              if (img.includes('id=')) {
+                  id = img.split('id=')[1].split('&')[0];
+              } 
+              // Caso 2: Link con /file/d/XXXX/view
+              else if (img.includes('/d/')) {
+                  id = img.split('/d/')[1].split('/')[0];
+              }
+              // Construimos el link de visualización directa universal
+              img = `https://drive.google.com/uc?id=${id}`;
           }
 
           htmlFinal += `
             <div class="card">
-              <img src="${img}" alt="${nombre}" onerror="this.src='https://via.placeholder.com/300x250?text=BR+Confecciones'">
+              <img src="${img}" alt="${nombre}" onerror="this.src='https://via.placeholder.com/300x250?text=Foto+en+proceso'">
               <div class="info">
                 <h3>${nombre}</h3>
                 <p class="desc">${desc}</p>
@@ -82,16 +88,12 @@
             </div>`;
         }
       });
-
-      contenedor.innerHTML = htmlFinal || '<p>No hay productos disponibles por ahora.</p>';
-      
+      contenedor.innerHTML = htmlFinal || '<p>Cargando productos...</p>';
     } catch (error) {
       console.error(error);
-      document.getElementById('contenedor-productos').innerHTML = 
-        '<p>Error al conectar con el catálogo. Verificá la publicación en el Excel.</p>';
+      document.getElementById('contenedor-productos').innerHTML = '<p>Error de conexión.</p>';
     }
   }
-
   cargarCatalogo();
 </script>
 </body>
