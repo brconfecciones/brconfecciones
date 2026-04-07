@@ -1,107 +1,94 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>BR Confecciones – Catálogo</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo – BR Confecciones</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
   <style>
-    * { box-sizing: border-box; }
-    body { margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; background: #1b1410; color: #ffffff; line-height: 1.6; }
-    .fondo-loop { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; }
-    .fondo-loop video { min-width: 100%; min-height: 100%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); object-fit: cover; opacity: 0.8; }
-    header { text-align: center; padding: 50px 20px; position: relative; z-index: 1; }
-    header h1 { font-family: 'Cormorant Garamond', serif; font-size: 3em; color: #f5e6cc; text-shadow: 0 0 10px rgba(212,175,55,0.4); }
-    .productos { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; padding: 20px; max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
-    .producto { width: 100%; max-width: 300px; background: rgba(31, 24, 19, 0.9); backdrop-filter: blur(5px); border-radius: 15px; overflow: hidden; border: 1px solid #3a2e25; transition: 0.3s; text-align: center; }
-    .producto img { width: 100%; height: 250px; object-fit: cover; border-bottom: 1px solid #3a2e25; }
+    body { margin: 0; font-family: 'Montserrat', sans-serif; background: #1b1410; color: #fff; text-align: center; }
+    header { padding: 50px 20px; background: rgba(0,0,0,0.3); border-bottom: 1px solid #3a2e25; }
+    h1 { font-family: 'Cormorant Garamond', serif; color: #f5e6cc; font-size: 2.8rem; margin: 0; }
+    .productos { display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; padding: 40px 20px; max-width: 1200px; margin: 0 auto; }
+    .card { width: 300px; background: rgba(42, 32, 25, 0.9); border: 1px solid #4a3b2f; border-radius: 15px; overflow: hidden; transition: 0.3s; box-shadow: 0 10px 20px rgba(0,0,0,0.5); }
+    .card:hover { transform: translateY(-10px); border-color: #d4af37; box-shadow: 0 0 20px rgba(212, 175, 55, 0.2); }
+    .card img { width: 100%; height: 250px; object-fit: cover; border-bottom: 1px solid #3a2e25; }
     .info { padding: 20px; }
-    .info h3 { font-family: 'Cormorant Garamond', serif; color: #f5e6cc; margin: 0 0 10px; }
-    .precio { color: #d4c5a8; font-weight: 600; font-size: 1.2em; }
-    .btn-whatsapp { display: inline-block; background: #25D366; color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-weight: 600; margin-top: 15px; }
-    footer { text-align: center; padding: 40px; background: rgba(20,15,12,0.9); position: relative; z-index: 1; border-top: 1px solid #3a2e25; }
+    .info h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: #f5e6cc; margin: 0 0 10px; }
+    .precio { color: #d4af37; font-weight: 600; font-size: 1.3rem; margin: 10px 0; }
+    .desc { font-size: 0.9rem; color: #ccc; min-height: 40px; }
+    .btn-wsp { display: block; background: #25d366; color: #fff; text-decoration: none; padding: 12px; border-radius: 30px; font-weight: bold; margin-top: 15px; transition: 0.3s; }
+    .btn-wsp:hover { background: #128c7e; transform: scale(1.05); }
+    .volver { display: inline-block; margin-top: 20px; color: #f5e6cc; text-decoration: none; font-size: 0.9rem; opacity: 0.8; }
+    .volver:hover { opacity: 1; text-decoration: underline; }
   </style>
 </head>
 <body>
 
-  <div class="fondo-loop">
-    <video autoplay muted loop playsinline>
-      <source src="img/fondo-br.mp4" type="video/mp4">
-    </video>
-  </div>
+<header>
+  <h1>Catálogo BR Confecciones</h1>
+  <a href="index.html" class="volver">← Volver a la página principal</a>
+</header>
 
-  <header>
-    <h1>Catálogo BR Confecciones</h1>
-  </header>
-
-  <div id="contenedor-productos" class="productos">
-      <p style="color: #f5e6cc;">Conectando con el taller...</p>
-  </div>
-
-  <footer>
-    BR Confecciones — Capilla del Monte, Córdoba<br>© 2025.
-  </footer>
+<div id="contenedor-productos" class="productos">
+  <p style="color: #f5e6cc;">Abriendo el taller...</p>
+</div>
 
 <script>
   const SHEET_ID = '1fczLyhidq7xLFh6LwONnqn_uGoAqujCSGzTRfgKwxrA';
-  const URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json`;
+  // Accedemos al CSV publicado de la Hoja 1
+  const URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&gid=0`;
 
   async function cargarCatalogo() {
     try {
       const respuesta = await fetch(URL);
-      const texto = await respuesta.text();
+      const csv = await respuesta.text();
       
-      // Limpiamos el texto para que sea un JSON válido
-      const jsonTexto = texto.substring(texto.indexOf("{"), texto.lastIndexOf("}") + 1);
-      const datos = JSON.parse(jsonTexto);
-      const filas = datos.table.rows;
-      
+      // Separamos por líneas y eliminamos la primera (títulos)
+      const filas = csv.split(/\r?\n/).slice(1);
       const contenedor = document.getElementById('contenedor-productos');
       let htmlFinal = '';
 
-      filas.forEach((fila, index) => {
-        if (index === 0) return; // Saltamos encabezados
+      filas.forEach(linea => {
+        // Regex para separar por comas ignorando las comas dentro de comillas
+        const c = linea.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
+        
+        if (c.length < 5) return;
 
-        const c = fila.c;
-        if (!c || !c[0]) return;
+        const nombre = c[0].replace(/"/g, '');
+        const precio = c[1].replace(/"/g, '');
+        const desc   = c[2].replace(/"/g, '');
+        let   img    = c[3].replace(/"/g, '');
+        const estado = c[4].replace(/"/g, '').trim().toLowerCase();
 
-        const nombre = c[0] ? c[0].v : '';
-        const precio = c[1] ? c[1].v : '';
-        const desc   = c[2] ? c[2].v : '';
-        let   img    = c[3] ? c[3].v : '';
-        const estado = c[4] ? c[4].v : '';
-
-        // Solo mostramos si dice "Activo" en la columna E
-        if (estado && estado.toString().toLowerCase().trim() === 'activo') {
-          
-          // Convertimos link de Drive para que sea imagen directa
+        if (estado === 'activo') {
+          // Limpiar link de Google Drive para visualización directa
           if (img.includes('drive.google.com')) {
-            const idMatch = img.match(/\/d\/([^\/]+)/);
-            if (idMatch) img = `https://drive.google.com/uc?export=view&id=${idMatch[1]}`;
+            const id = img.match(/[-\w]{25,}/);
+            if (id) img = `https://drive.google.com/uc?export=view&id=${id[0]}`;
           }
 
           htmlFinal += `
-            <div class="producto">
-              <img src="${img}" alt="${nombre}" onerror="this.src='https://via.placeholder.com/300x250?text=Foto+en+proceso'">
+            <div class="card">
+              <img src="${img}" alt="${nombre}" onerror="this.src='https://via.placeholder.com/300x250?text=BR+Confecciones'">
               <div class="info">
                 <h3>${nombre}</h3>
+                <p class="desc">${desc}</p>
                 <p class="precio">$${precio} ARS</p>
-                <p>${desc}</p>
-                <a href="https://wa.me/543548584454?text=Hola!%20Me%20interesa:%20${encodeURIComponent(nombre)}" class="btn-whatsapp">
-                  💬 Tengo interés
+                <a href="https://wa.me/543548584454?text=Hola!%20Me%20interesa%20el%20producto:%20${encodeURIComponent(nombre)}" class="btn-wsp">
+                  💬 Consultar por WhatsApp
                 </a>
               </div>
-            </div>
-          `;
+            </div>`;
         }
       });
 
-      contenedor.innerHTML = htmlFinal || '<p>No hay productos activos en este momento.</p>';
-
+      contenedor.innerHTML = htmlFinal || '<p>No hay productos disponibles por ahora.</p>';
+      
     } catch (error) {
-      console.error("Error:", error);
+      console.error(error);
       document.getElementById('contenedor-productos').innerHTML = 
-        '<p>Cargando productos del taller...</p>';
+        '<p>Error al conectar con el catálogo. Verificá la publicación en el Excel.</p>';
     }
   }
 
