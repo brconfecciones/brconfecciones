@@ -12,53 +12,54 @@
     .info-box { text-align: center; padding: 40px 20px; background: rgba(20, 15, 12, 0.9); border-bottom: 1px solid #3a2e25; }
     h1 { font-family: 'Cormorant Garamond', serif; color: #f5e6cc; font-size: 2.8rem; margin: 0 0 20px; }
     
-    /* Botones de Filtro */
+    /* Filtros */
     .filter-container { margin: 20px 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
     .filter-btn { 
       background: transparent; border: 1px solid #4a3b2f; color: #d4c5a8; 
       padding: 8px 22px; border-radius: 20px; cursor: pointer; transition: 0.3s;
-      text-transform: capitalize; font-size: 0.9rem; font-weight: 500;
+      text-transform: capitalize; font-size: 0.9rem;
     }
-    /* El estado activo (Amarillo) */
-    .filter-btn.active { background: #d4af37; color: #1b1410; border-color: #d4af37; box-shadow: 0 0 10px rgba(212, 175, 55, 0.3); }
-    .filter-btn:hover:not(.active) { border-color: #d4af37; color: #fff; }
+    .filter-btn.active { background: #d4af37; color: #1b1410; border-color: #d4af37; }
 
-    /* Grilla de Galería */
+    /* Grilla */
     .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; padding: 30px; max-width: 1200px; margin: 0 auto; }
     .gallery-item { 
-      height: 380px; background: #1f1813; border-radius: 12px; overflow: hidden; 
-      border: 1px solid #3a2e25; cursor: pointer; position: relative;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      background: #1f1813; border-radius: 12px; overflow: hidden; 
+      border: 1px solid #3a2e25; position: relative; box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      display: flex; flex-direction: column;
     }
-    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s ease; }
-    .gallery-item:hover img { transform: scale(1.1); }
-    
-    .caption { 
-      position: absolute; bottom: 0; width: 100%; background: linear-gradient(transparent, rgba(0,0,0,0.9)); 
-      color: #f5e6cc; padding: 20px; text-align: center; opacity: 0; transition: 0.3s; box-sizing: border-box;
+    .img-container { position: relative; height: 350px; cursor: pointer; overflow: hidden; }
+    .img-container img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s ease; }
+    .img-container:hover img { transform: scale(1.05); }
+
+    /* Botón Consultar */
+    .btn-consulta {
+      background: #25d366; color: white; text-decoration: none;
+      text-align: center; padding: 12px; font-weight: bold; font-size: 0.9rem;
+      transition: 0.3s; display: block; border: none;
     }
-    .gallery-item:hover .caption { opacity: 1; }
-    .caption strong { display: block; font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; }
+    .btn-consulta:hover { background: #128c7e; }
+
+    .info-prenda { padding: 15px; text-align: center; background: rgba(0,0,0,0.2); flex-grow: 1; }
+    .info-prenda strong { display: block; font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: #f5e6cc; }
+    .info-prenda small { color: #ccc; font-size: 0.85rem; }
 
     /* Lightbox */
     #lightbox { display: none; position: fixed; z-index: 1000; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.97); text-align: center; cursor: zoom-out; }
-    #lightbox img { max-width: 90%; max-height: 80vh; margin-top: 60px; border: 1px solid #d4af37; border-radius: 8px; box-shadow: 0 0 30px rgba(212, 175, 55, 0.4); }
-    #lightbox p { color: #f5e6cc; font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; margin-top: 20px; }
-    .close { position: absolute; top: 20px; right: 35px; color: #fff; font-size: 50px; cursor: pointer; font-weight: 200; }
+    #lightbox img { max-width: 90%; max-height: 80vh; margin-top: 60px; border: 1px solid #d4af37; border-radius: 8px; }
+    .close { position: absolute; top: 20px; right: 35px; color: #fff; font-size: 50px; cursor: pointer; }
 
-    footer { text-align: center; padding: 60px 20px; color: #666; font-size: 0.85rem; border-top: 1px solid #3a2e25; }
+    footer { text-align: center; padding: 60px; color: #666; font-size: 0.85rem; border-top: 1px solid #3a2e25; }
   </style>
 </head>
 <body>
 
   <div class="info-box">
     <h1>Galería de Creaciones</h1>
-    
     <div id="filtros" class="filter-container">
         <button class="filter-btn active" onclick="seleccionarBoton(this); filtrar('todos')">Todos</button>
-        </div>
-
-    <a href="index.html" style="color: #d4c5a8; text-decoration: none; font-size: 0.8rem; border-bottom: 1px solid #3a2e25;">← Volver al Inicio</a>
+    </div>
+    <a href="index.html" style="color: #d4c5a8; text-decoration: none; font-size: 0.8rem;">← Volver al Inicio</a>
   </div>
 
   <div id="grid-galeria" class="grid">
@@ -68,12 +69,10 @@
   <div id="lightbox" onclick="this.style.display='none'">
     <span class="close">×</span>
     <img id="lightbox-img">
-    <p id="lightbox-txt"></p>
+    <p id="lightbox-txt" style="color: #f5e6cc; margin-top: 20px; font-size: 1.5rem;"></p>
   </div>
 
-  <footer>
-    BR Confecciones — Capilla del Monte, Córdoba<br>© 2026.
-  </footer>
+  <footer>BR Confecciones — Capilla del Monte, Córdoba</footer>
 
 <script>
   const SHEET_ID = '1fczLyhidq7xLFh6LwONnqn_uGoAqujCSGzTRfgKwxrA';
@@ -82,7 +81,6 @@
 
   let todosLosTrabajos = [];
 
-  // Función para manejar el estado visual de los botones
   function seleccionarBoton(elemento) {
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     elemento.classList.add('active');
@@ -97,7 +95,7 @@
       const filtroContainer = document.getElementById('filtros');
       let categoriasEncontradas = new Set();
 
-      filas.forEach(linea => {
+      filas.forEach((linea) => {
         const c = linea.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
         if (c.length < 3) return;
 
@@ -106,55 +104,54 @@
         let   imgRaw = c[2].replace(/"/g, '').trim();
         const cat    = c[3] ? c[3].replace(/"/g, '').trim().toLowerCase() : 'otros';
 
-        if (cat !== 'otros' && cat !== '') {
-            categoriasEncontradas.add(cat);
-        }
+        if (cat !== 'otros' && cat !== '') categoriasEncontradas.add(cat);
 
         let finalImg = imgRaw;
-        if (imgRaw.includes('drive.google.com') || imgRaw.includes('google.com/file')) {
-          let id = imgRaw.includes('id=') ? imgRaw.split('id=')[1].split('&')[0] : imgRaw.split('/d/')[1].split('/')[0];
-          finalImg = `https://lh3.googleusercontent.com/u/0/d/${id}`;
+        if (imgRaw.includes('drive.google.com')) {
+          let driveID = imgRaw.includes('id=') ? imgRaw.split('id=')[1].split('&')[0] : imgRaw.split('/d/')[1].split('/')[0];
+          finalImg = `https://lh3.googleusercontent.com/u/0/d/${driveID}`;
         }
 
         todosLosTrabajos.push({ titulo, desc, img: finalImg, cat });
       });
 
-      // Crear botones para cada categoría nueva que encuentre en el Excel
       categoriasEncontradas.forEach(cat => {
         const btn = document.createElement('button');
         btn.className = 'filter-btn';
         btn.innerText = cat;
-        btn.onclick = (e) => {
-            seleccionarBoton(btn);
-            filtrar(cat);
-        };
+        btn.onclick = (e) => { seleccionarBoton(btn); filtrar(cat); };
         filtroContainer.appendChild(btn);
       });
 
       mostrarGrilla(todosLosTrabajos);
-    } catch (e) { 
-      console.error(e);
-      document.getElementById('grid-galeria').innerHTML = '<p>Error al conectar con la galería.</p>';
-    }
+    } catch (e) { console.error(e); }
   }
 
   function mostrarGrilla(lista) {
     const contenedor = document.getElementById('grid-galeria');
-    contenedor.innerHTML = lista.map(t => `
-      <div class="gallery-item" onclick="abrirLB('${t.img}', '${t.titulo}')">
-        <img src="${t.img}" loading="lazy">
-        <div class="caption"><strong>${t.titulo}</strong><br><small>${t.desc}</small></div>
-      </div>
-    `).join('');
+    contenedor.innerHTML = lista.map(t => {
+      // Mensaje personalizado para WhatsApp saludando a los dos o a la marca
+      const mensajeWsp = encodeURIComponent(`¡Hola BR Confecciones! Vi este trabajo en su galería y me encantó: ${t.titulo}`);
+      
+      return `
+        <div class="gallery-item">
+          <div class="img-container" onclick="abrirLB('${t.img}', '${t.titulo}')">
+            <img src="${t.img}" loading="lazy">
+          </div>
+          <div class="info-prenda">
+            <strong>${t.titulo}</strong>
+            <small>${t.desc}</small>
+          </div>
+          <a href="https://wa.me/543548584454?text=${mensajeWsp}" class="btn-consulta" target="_blank">
+            💬 Consultar por este trabajo
+          </a>
+        </div>`;
+    }).join('');
   }
 
   function filtrar(cat) {
-    if (cat === 'todos') {
-      mostrarGrilla(todosLosTrabajos);
-    } else {
-      const filtrados = todosLosTrabajos.filter(t => t.cat === cat);
-      mostrarGrilla(filtrados);
-    }
+    if (cat === 'todos') { mostrarGrilla(todosLosTrabajos); } 
+    else { mostrarGrilla(todosLosTrabajos.filter(t => t.cat === cat)); }
   }
 
   function abrirLB(src, txt) {
@@ -165,6 +162,5 @@
 
   cargarGaleria();
 </script>
-
 </body>
 </html>
