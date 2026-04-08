@@ -42,7 +42,7 @@
 
     .info-prenda { padding: 15px; text-align: center; background: rgba(0,0,0,0.2); flex-grow: 1; }
     .info-prenda strong { display: block; font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: #f5e6cc; }
-    .info-prenda small { color: #ccc; font-size: 0.85rem; }
+    .info-prenda small { color: #ccc; font-size: 0.85rem; display: block; margin-top: 5px; }
 
     /* Lightbox */
     #lightbox { display: none; position: fixed; z-index: 1000; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.97); text-align: center; cursor: zoom-out; }
@@ -130,8 +130,11 @@
   function mostrarGrilla(lista) {
     const contenedor = document.getElementById('grid-galeria');
     contenedor.innerHTML = lista.map(t => {
-      // Mensaje personalizado para WhatsApp saludando a los dos o a la marca
-      const mensajeWsp = encodeURIComponent(`¡Hola BR Confecciones! Vi este trabajo en su galería y me encantó: ${t.titulo}`);
+      
+      // ARMADO DEL MENSAJE DETALLADO
+      // \n es para crear un salto de línea en el mensaje
+      const textoMensaje = `¡Hola BR Confecciones! Vi este trabajo en su galería y me encantó:\n\n*Producto:* ${t.titulo}\n*Detalles:* ${t.desc}`;
+      const mensajeWsp = encodeURIComponent(textoMensaje);
       
       return `
         <div class="gallery-item">
