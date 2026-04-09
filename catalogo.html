@@ -6,7 +6,6 @@
   <title>BR Confecciones – Catálogo</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-  <!-- Meta etiquetas para redes sociales -->
   <meta property="og:title" content="BR Confecciones – Catálogo de Productos">
   <meta property="og:description" content="Confección artesanal a medida en Capilla del Monte. Disfraces, ropa de baile, cortinas y más — con precios y contacto directo por WhatsApp.">
   <meta property="og:image" content="https://brconfecciones.github.io/img/Logo1.jpg">
@@ -35,19 +34,29 @@
     
     .card:hover { transform: translateY(-10px); border-color: #d4af37; box-shadow: 0 0 20px rgba(212, 175, 55, 0.2); }
     
-    /* AJUSTE PARA QUE LA FOTO SE VEA COMPLETA */
     .card img { 
       width: 100%; 
-      height: 400px; /* Altura ideal para fotos verticales de disfraces */
-      object-fit: contain; /* Muestra la imagen entera sin recortar */
-      background-color: #140e0a; /* Fondo oscuro si la foto es angosta */
+      height: 400px; 
+      object-fit: contain; 
+      background-color: #140e0a; 
       border-bottom: 1px solid #3a2e25;
     }
     
     .info { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
     .info h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: #f5e6cc; margin: 0 0 10px; }
     
-    .precio { color: #d4af37; font-weight: 600; font-size: 1.4rem; margin: 10px 0; }
+    /* ESTILO DE PRECIO CORREGIDO */
+    .precio-contenedor {
+      margin: 10px 0 15px;
+      color: #d4af37;
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+      gap: 5px;
+    }
+    .precio-monto { font-weight: 600; font-size: 1.5rem; }
+    .precio-moneda { font-size: 0.85rem; font-weight: 400; opacity: 0.9; }
+
     .desc { font-size: 0.95rem; color: #ccc; min-height: 45px; line-height: 1.4; margin-bottom: 15px; }
     
     .btn-wsp { 
@@ -71,13 +80,7 @@
   </style>
 </head>
 <body>
-  <!-- Fondo general en loop -->
-  <div class="fondo-loop">
-    <video autoplay muted loop playsinline>
-      <source src="img/fondo-br.mp4" type="video/mp4">
-      Tu navegador no soporta el video de fondo.
-    </video>
-  </div>
+
 <header>
   <h1>Catálogo BR Confecciones</h1>
   <a href="index.html" class="volver">← Volver a la página principal</a>
@@ -92,47 +95,35 @@
 </footer>
 
 <script>
-  // ID de tu planilla de Google
   const SHEET_ID = '1fczLyhidq7xLFh6LwONnqn_uGoAqujCSGzTRfgKwxrA';
-  // Enlace al CSV publicado (Asegurate que en el Excel diga: Publicar Hoja 1 como .CSV)
   const URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&gid=0`;
 
   async function cargarCatalogo() {
     try {
       const respuesta = await fetch(URL);
       const csv = await respuesta.text();
-      
-      // Separamos por líneas y quitamos la primera (cabecera)
       const filas = csv.split(/\r?\n/).slice(1);
       const contenedor = document.getElementById('contenedor-productos');
       let htmlFinal = '';
 
       filas.forEach(linea => {
-        // Separamos columnas respetando comas internas
         const c = linea.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
-        
         if (c.length < 5) return;
 
         const nombre = c[0].replace(/"/g, '');
-        const precio = c[1].replace(/"/g, '');
+        const precioBruto = c[1].replace(/"/g, '').trim();
         const desc   = c[2].replace(/"/g, '');
         let   imgRaw = c[3].replace(/"/g, '').trim();
         const estado = c[4].replace(/"/g, '').trim().toLowerCase();
 
-        // Solo mostramos productos con estado "activo"
         if (estado === 'activo') {
-          let finalImg = '';
+          // Limpiamos el precio por si tiene $ o ARS de más en el Excel
+          const precioLimpio = precioBruto.replace('$', '').replace('ARS', '').trim();
           
-          // --- MOTOR INTELIGENTE PARA IMÁGENES ---
+          let finalImg = '';
           if (imgRaw.includes('drive.google.com')) {
-              let id = '';
-              if (imgRaw.includes('id=')) {
-                  id = imgRaw.split('id=')[1].split('&')[0];
-              } else if (imgRaw.includes('/d/')) {
-                  id = imgRaw.split('/d/')[1].split('/')[0];
-              }
-              // Servidor LH3: el más rápido y estable para mostrar fotos de Drive
-              finalImg = `https://lh3.googleusercontent.com/d/${id}`;
+              let id = imgRaw.includes('id=') ? imgRaw.split('id=')[1].split('&')[0] : imgRaw.split('/d/')[1].split('/')[0];
+              finalImg = `https://lh3.googleusercontent.com/u/0/d/${id}`;
           } else {
               finalImg = imgRaw;
           }
@@ -146,7 +137,10 @@
                   <p class="desc">${desc}</p>
                 </div>
                 <div>
-                  <p class="precio">$${precio} ARS</p>
+                  <div class="precio-contenedor">
+                    <span class="precio-monto">$${precioLimpio}</span>
+                    <span class="precio-moneda">ARS</span>
+                  </div>
                   <a href="https://wa.me/543548584454?text=Hola!%20Me%20interesa%20el%20producto:%20${encodeURIComponent(nombre)}" class="btn-wsp">
                     💬 Consultar por WhatsApp
                   </a>
@@ -161,7 +155,7 @@
     } catch (error) {
       console.error("Error al cargar:", error);
       document.getElementById('contenedor-productos').innerHTML = 
-        '<p style="color: #f5e6cc;">Error al conectar con el catálogo. Verificá la publicación en el Excel.</p>';
+        '<p style="color: #f5e6cc;">Error al conectar con el catálogo.</p>';
     }
   }
 
