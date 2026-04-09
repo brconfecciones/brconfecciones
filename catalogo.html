@@ -52,8 +52,9 @@
       display: flex;
       justify-content: center;
       align-items: baseline;
-      gap: 5px;
+      gap: 6px; /* Un poquito más de espacio entre palabras */
     }
+    .precio-etiqueta { font-size: 0.9rem; opacity: 0.9; font-weight: 400; }
     .precio-monto { font-weight: 600; font-size: 1.5rem; }
     .precio-moneda { font-size: 0.85rem; font-weight: 400; opacity: 0.9; }
 
@@ -128,7 +129,7 @@
               finalImg = imgRaw;
           }
 
-          htmlFinal += `
+        htmlFinal += `
             <div class="card">
               <img src="${finalImg}" alt="${nombre}" loading="lazy">
               <div class="info">
@@ -138,6 +139,7 @@
                 </div>
                 <div>
                   <div class="precio-contenedor">
+                    <span class="precio-etiqueta">Desde</span>
                     <span class="precio-monto">$${precioLimpio}</span>
                     <span class="precio-moneda">ARS</span>
                   </div>
