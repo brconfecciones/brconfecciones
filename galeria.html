@@ -1,198 +1,1981 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Galería – BR Confecciones</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
-  <style>
-    body { margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; background: #1b1410; color: #fff; line-height: 1.6; }
 
-    /* --- VIDEO DE CABECERA SIN RECORTES --- */
-    .video-header { 
-      width: 100%; 
-      line-height: 0; /* Elimina espacios extra debajo del video */
-      background: #000;
-      border-bottom: 2px solid #3a2e25;
+  <title>Galería de Trabajos | BR Confecciones</title>
+
+  <!-- =====================================================
+       SEO
+       ===================================================== -->
+
+  <meta
+    name="description"
+    content="Galería de trabajos de BR Confecciones en Capilla del Monte, Córdoba. Confección a medida, ropa de baile, disfraces, indumentaria, hogar y trabajos personalizados."
+  >
+
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="BR Confecciones">
+  <meta name="theme-color" content="#120d0b">
+
+  <link
+    rel="canonical"
+    href="https://brconfecciones.github.io/galeria.html"
+  >
+
+  <!-- =====================================================
+       OPEN GRAPH
+       ===================================================== -->
+
+  <meta
+    property="og:title"
+    content="Galería de Trabajos | BR Confecciones"
+  >
+
+  <meta
+    property="og:description"
+    content="Conocé algunos de nuestros trabajos de confección, personalización y creación a medida."
+  >
+
+  <meta
+    property="og:image"
+    content="https://brconfecciones.github.io/img/Logo1.jpg"
+  >
+
+  <meta
+    property="og:image:alt"
+    content="BR Confecciones"
+  >
+
+  <meta
+    property="og:url"
+    content="https://brconfecciones.github.io/galeria.html"
+  >
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="BR Confecciones">
+  <meta property="og:locale" content="es_AR">
+
+  <!-- =====================================================
+       X / TWITTER
+       ===================================================== -->
+
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta
+    name="twitter:title"
+    content="Galería de Trabajos | BR Confecciones"
+  >
+
+  <meta
+    name="twitter:description"
+    content="Confección a medida y trabajos personalizados en Capilla del Monte, Córdoba."
+  >
+
+  <meta
+    name="twitter:image"
+    content="https://brconfecciones.github.io/img/Logo1.jpg"
+  >
+
+  <!-- FAVICON ACTUAL -->
+
+  <link
+    rel="icon"
+    href="favicon.ico"
+    type="image/x-icon"
+  >
+
+  <!-- FUENTES -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@400;500&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <style>
+
+    * {
+      box-sizing: border-box;
     }
-    #intro-video { 
-      width: 100%; 
-      height: auto; /* El alto se ajusta solo para mostrar TODO el video */
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    body {
+
+      margin: 0;
+      padding: 0;
+
+      font-family: 'Montserrat', sans-serif;
+
+      color: #fff;
+
+      line-height: 1.6;
+
+      overflow-x: hidden;
+
+      min-height: 100vh;
+
+      background:
+
+        radial-gradient(
+          circle at 15% 25%,
+          rgba(40, 210, 255, .075),
+          transparent 30%
+        ),
+
+        radial-gradient(
+          circle at 84% 34%,
+          rgba(212, 175, 55, .10),
+          transparent 34%
+        ),
+
+        radial-gradient(
+          circle at 50% 85%,
+          rgba(190, 65, 255, .055),
+          transparent 35%
+        ),
+
+        linear-gradient(
+          145deg,
+          #08090c 0%,
+          #120d0b 42%,
+          #1b1410 72%,
+          #090b10 100%
+        );
+
+      position: relative;
+    }
+
+
+    /* =====================================================
+       LUCES AMBIENTALES DEL FONDO
+       ===================================================== */
+
+    body::before {
+
+      content: "";
+
+      position: fixed;
+
+      width: 430px;
+      height: 430px;
+
+      top: 15%;
+      left: -220px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(40, 210, 255, .10),
+          transparent 68%
+        );
+
+      filter: blur(20px);
+
+      pointer-events: none;
+
+      z-index: -1;
+
+      animation:
+        ambienteAzul 16s ease-in-out infinite alternate;
+    }
+
+
+    body::after {
+
+      content: "";
+
+      position: fixed;
+
+      width: 540px;
+      height: 540px;
+
+      right: -260px;
+      bottom: 3%;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(212, 175, 55, .11),
+          transparent 68%
+        );
+
+      filter: blur(22px);
+
+      pointer-events: none;
+
+      z-index: -1;
+
+      animation:
+        ambienteDorado 19s ease-in-out infinite alternate;
+    }
+
+
+    @keyframes ambienteAzul {
+
+      from {
+        transform: translateY(-20px) scale(.95);
+        opacity: .65;
+      }
+
+      to {
+        transform: translateY(45px) scale(1.08);
+        opacity: 1;
+      }
+
+    }
+
+
+    @keyframes ambienteDorado {
+
+      from {
+        transform: translateY(30px) scale(.92);
+        opacity: .60;
+      }
+
+      to {
+        transform: translateY(-35px) scale(1.08);
+        opacity: 1;
+      }
+
+    }
+
+
+    /* =====================================================
+       VIDEO DE CABECERA
+       ===================================================== */
+
+    .video-header {
+
+      width: 100%;
+
+      line-height: 0;
+
+      background: #000;
+
+      border-bottom:
+        1px solid rgba(212, 175, 55, .65);
+
+      box-shadow:
+
+        0 7px 30px rgba(0, 0, 0, .68),
+
+        0 0 14px rgba(212, 175, 55, .25),
+
+        0 0 34px rgba(40, 210, 255, .11);
+
+      position: relative;
+
+      z-index: 1;
+    }
+
+
+    #intro-video {
+
+      width: 100%;
+
+      height: auto;
+
       display: block;
     }
 
-    /* Encabezado */
-    .info-box { text-align: center; padding: 30px 20px; background: rgba(20, 15, 12, 0.9); }
-    h1 { font-family: 'Cormorant Garamond', serif; color: #f5e6cc; font-size: 2.5rem; margin: 0; }
-    
-    /* Filtros */
-    .filter-container { margin: 15px 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
-    .filter-btn { 
-      background: transparent; border: 1px solid #4a3b2f; color: #d4c5a8; 
-      padding: 6px 18px; border-radius: 20px; cursor: pointer; transition: 0.3s;
-      text-transform: capitalize; font-size: 0.85rem;
-    }
-    .filter-btn.active { background: #d4af37; color: #1b1410; border-color: #d4af37; }
 
-    /* Grilla */
-    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; padding: 20px; max-width: 1200px; margin: 0 auto; }
-    .gallery-item { 
-      background: #1f1813; border-radius: 12px; overflow: hidden; 
-      border: 1px solid #3a2e25; position: relative; box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-      display: flex; flex-direction: column;
-    }
-    .img-container { position: relative; height: 320px; cursor: pointer; overflow: hidden; }
-    .img-container img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s ease; }
-    .img-container:hover img { transform: scale(1.05); }
+    /* =====================================================
+       ENCABEZADO
+       ===================================================== */
 
-    /* Botón Consultar */
+    .info-box {
+
+      text-align: center;
+
+      padding: 30px 20px 26px;
+
+      max-width: 900px;
+
+      margin: 30px auto;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(20, 15, 12, .93),
+          rgba(15, 16, 20, .90)
+        );
+
+      backdrop-filter: blur(5px);
+
+      border:
+        1px solid rgba(212, 175, 55, .50);
+
+      border-radius: 14px;
+
+      box-shadow:
+
+        0 12px 30px rgba(0, 0, 0, .52),
+
+        0 0 12px rgba(212, 175, 55, .22),
+
+        0 0 28px rgba(212, 175, 55, .09),
+
+        inset 0 0 18px rgba(212, 175, 55, .06);
+
+      position: relative;
+
+      z-index: 1;
+    }
+
+
+    h1 {
+
+      font-family:
+        'Cormorant Garamond',
+        serif;
+
+      color: #f5e6cc;
+
+      font-size: 2.7rem;
+
+      margin: 0 0 8px;
+
+      text-shadow:
+
+        0 0 8px rgba(212, 175, 55, .48),
+
+        0 0 20px rgba(212, 175, 55, .18);
+    }
+
+
+    .intro-galeria {
+
+      max-width: 680px;
+
+      margin: 8px auto 20px;
+
+      color: #cdbda6;
+
+      font-size: .96rem;
+    }
+
+
+    .intro-galeria strong {
+
+      color: #f5e6cc;
+
+      font-weight: 500;
+    }
+
+
+    /* =====================================================
+       FILTROS
+       ===================================================== */
+
+    .filter-container {
+
+      margin: 18px 0;
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      justify-content: center;
+
+      gap: 9px;
+    }
+
+
+    .filter-btn {
+
+      --btn-neon: 212, 175, 55;
+
+      background:
+        rgba(20, 17, 16, .70);
+
+      border:
+        1px solid rgba(212, 175, 55, .30);
+
+      color: #d4c5a8;
+
+      padding:
+        7px 18px;
+
+      border-radius:
+        22px;
+
+      cursor:
+        pointer;
+
+      text-transform:
+        capitalize;
+
+      font-family:
+        'Montserrat',
+        sans-serif;
+
+      font-size:
+        .85rem;
+
+      transition:
+
+        transform .30s ease,
+
+        border-color .30s ease,
+
+        color .30s ease,
+
+        box-shadow .30s ease,
+
+        background .30s ease;
+    }
+
+
+    .filter-btn:hover {
+
+      transform:
+        translateY(-2px);
+
+      color:
+        #fff;
+
+      border-color:
+        rgba(var(--btn-neon), .90);
+
+      background:
+        rgba(var(--btn-neon), .09);
+
+      box-shadow:
+
+        0 0 8px
+        rgba(var(--btn-neon), .50),
+
+        0 0 18px
+        rgba(var(--btn-neon), .22);
+    }
+
+
+    .filter-btn.active {
+
+      background:
+        linear-gradient(
+          135deg,
+          #d4af37,
+          #e6ca73
+        );
+
+      color:
+        #17120d;
+
+      border-color:
+        #e6ca73;
+
+      box-shadow:
+
+        0 0 10px
+        rgba(212, 175, 55, .60),
+
+        0 0 22px
+        rgba(212, 175, 55, .23);
+
+      font-weight:
+        600;
+    }
+
+
+    .volver {
+
+      display:
+        inline-block;
+
+      color:
+        #d4c5a8;
+
+      text-decoration:
+        none;
+
+      font-size:
+        .80rem;
+
+      margin-top:
+        4px;
+
+      transition:
+        .3s;
+    }
+
+
+    .volver:hover {
+
+      color:
+        #fff5db;
+
+      text-shadow:
+        0 0 8px rgba(212, 175, 55, .70);
+    }
+
+
+    /* =====================================================
+       GRILLA
+       ===================================================== */
+
+    .grid {
+
+      display:
+        grid;
+
+      grid-template-columns:
+        repeat(
+          auto-fill,
+          minmax(280px, 1fr)
+        );
+
+      gap:
+        24px;
+
+      padding:
+        25px 20px 45px;
+
+      max-width:
+        1200px;
+
+      margin:
+        0 auto;
+    }
+
+
+    /* =====================================================
+       TARJETAS
+       ===================================================== */
+
+    .gallery-item {
+
+      --neon-rgb:
+        212, 175, 55;
+
+      background:
+        linear-gradient(
+          150deg,
+          rgba(31, 24, 19, .93),
+          rgba(17, 18, 22, .93)
+        );
+
+      border-radius:
+        14px;
+
+      overflow:
+        hidden;
+
+      border:
+        1px solid rgba(212, 175, 55, .30);
+
+      position:
+        relative;
+
+      box-shadow:
+
+        0 8px 22px rgba(0, 0, 0, .48),
+
+        0 0 10px rgba(212, 175, 55, .10),
+
+        inset 0 0 12px rgba(212, 175, 55, .04);
+
+      display:
+        flex;
+
+      flex-direction:
+        column;
+
+      transition:
+
+        transform .38s ease,
+
+        box-shadow .38s ease,
+
+        border-color .38s ease;
+    }
+
+
+    /* Luz dorada permanente */
+
+    .gallery-item::after {
+
+      content: "";
+
+      position:
+        absolute;
+
+      inset:
+        0;
+
+      pointer-events:
+        none;
+
+      border-radius:
+        14px;
+
+      opacity:
+        .22;
+
+      box-shadow:
+        inset 0 0 20px rgba(212, 175, 55, .14);
+
+      transition:
+
+        opacity .38s ease,
+
+        box-shadow .38s ease;
+    }
+
+
+    .gallery-item:hover {
+
+      transform:
+        translateY(-8px)
+        scale(1.012);
+
+      border-color:
+        rgba(var(--neon-rgb), .94);
+
+      box-shadow:
+
+        0 16px 34px
+        rgba(0, 0, 0, .58),
+
+        0 0 10px
+        rgba(var(--neon-rgb), .58),
+
+        0 0 24px
+        rgba(var(--neon-rgb), .34),
+
+        0 0 44px
+        rgba(var(--neon-rgb), .15),
+
+        inset 0 0 20px
+        rgba(var(--neon-rgb), .13);
+    }
+
+
+    .gallery-item:hover::after {
+
+      opacity:
+        .72;
+
+      box-shadow:
+        inset 0 0 26px
+        rgba(var(--neon-rgb), .21);
+    }
+
+
+    /* =====================================================
+       IMÁGENES
+       ===================================================== */
+
+    .img-container {
+
+      position:
+        relative;
+
+      height:
+        320px;
+
+      cursor:
+        pointer;
+
+      overflow:
+        hidden;
+
+      background:
+        #0c0c0e;
+    }
+
+
+    .img-container img {
+
+      width:
+        100%;
+
+      height:
+        100%;
+
+      object-fit:
+        cover;
+
+      transition:
+
+        transform .65s ease,
+
+        filter .55s ease;
+    }
+
+
+    .gallery-item:hover
+    .img-container img {
+
+      transform:
+        scale(1.045);
+
+      filter:
+
+        brightness(1.06)
+
+        contrast(1.03)
+
+        saturate(1.08);
+    }
+
+
+    .img-container::after {
+
+      content: "";
+
+      position:
+        absolute;
+
+      inset:
+        0;
+
+      pointer-events:
+        none;
+
+      background:
+        linear-gradient(
+          180deg,
+          transparent 55%,
+          rgba(0, 0, 0, .22)
+        );
+
+      transition:
+        .4s;
+    }
+
+
+    .gallery-item:hover
+    .img-container::after {
+
+      box-shadow:
+        inset 0 0 28px
+        rgba(var(--neon-rgb), .11);
+    }
+
+
+    /* =====================================================
+       INFORMACIÓN
+       ===================================================== */
+
+    .info-prenda {
+
+      padding:
+        13px;
+
+      text-align:
+        center;
+
+      background:
+        rgba(0, 0, 0, .17);
+
+      flex-grow:
+        1;
+    }
+
+
+    .info-prenda strong {
+
+      display:
+        block;
+
+      font-family:
+        'Cormorant Garamond',
+        serif;
+
+      font-size:
+        1.32rem;
+
+      color:
+        #f5e6cc;
+
+      transition:
+
+        color .35s ease,
+
+        text-shadow .35s ease;
+    }
+
+
+    .gallery-item:hover
+    .info-prenda strong {
+
+      color:
+        #fff;
+
+      text-shadow:
+
+        0 0 7px
+        rgba(var(--neon-rgb), .82),
+
+        0 0 16px
+        rgba(var(--neon-rgb), .44);
+    }
+
+
+    .info-prenda small {
+
+      color:
+        #c5c0bc;
+
+      font-size:
+        .80rem;
+
+      display:
+        block;
+
+      margin-top:
+        5px;
+
+      line-height:
+        1.45;
+    }
+
+
+    /* =====================================================
+       BOTÓN WHATSAPP
+       ===================================================== */
+
     .btn-consulta {
-      background: #25d366; color: white; text-decoration: none;
-      text-align: center; padding: 10px; font-weight: bold; font-size: 0.85rem;
-      transition: 0.3s; display: block; border: none;
+
+      background:
+        linear-gradient(
+          135deg,
+          #25d366,
+          #1ebe5d
+        );
+
+      color:
+        white;
+
+      text-decoration:
+        none;
+
+      text-align:
+        center;
+
+      padding:
+        11px;
+
+      font-weight:
+        600;
+
+      font-size:
+        .85rem;
+
+      transition:
+
+        transform .3s ease,
+
+        background .3s ease,
+
+        box-shadow .3s ease;
+
+      display:
+        block;
+
+      border:
+        none;
+
+      position:
+        relative;
+
+      z-index:
+        2;
     }
-    .btn-consulta:hover { background: #128c7e; }
 
-    .info-prenda { padding: 12px; text-align: center; background: rgba(0,0,0,0.2); flex-grow: 1; }
-    .info-prenda strong { display: block; font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: #f5e6cc; }
-    .info-prenda small { color: #ccc; font-size: 0.8rem; display: block; margin-top: 3px; }
 
-    /* Lightbox */
-    #lightbox { display: none; position: fixed; z-index: 1000; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.97); text-align: center; cursor: zoom-out; }
-    #lightbox img { max-width: 90%; max-height: 80vh; margin-top: 60px; border: 1px solid #d4af37; border-radius: 8px; }
-    .close { position: absolute; top: 20px; right: 35px; color: #fff; font-size: 50px; cursor: pointer; }
+    .btn-consulta:hover {
 
-    footer { text-align: center; padding: 40px; color: #666; font-size: 0.8rem; border-top: 1px solid #3a2e25; }
+      background:
+        linear-gradient(
+          135deg,
+          #20c15a,
+          #128c7e
+        );
+
+      box-shadow:
+
+        0 0 10px
+        rgba(37, 211, 102, .58),
+
+        0 0 22px
+        rgba(37, 211, 102, .24);
+
+      transform:
+        translateY(-1px);
+    }
+
+
+    /* =====================================================
+       LIGHTBOX
+       ===================================================== */
+
+    #lightbox {
+
+      display:
+        none;
+
+      position:
+        fixed;
+
+      z-index:
+        1000;
+
+      top:
+        0;
+
+      left:
+        0;
+
+      width:
+        100%;
+
+      height:
+        100%;
+
+      background:
+        rgba(3, 4, 7, .97);
+
+      text-align:
+        center;
+
+      cursor:
+        zoom-out;
+
+      backdrop-filter:
+        blur(5px);
+    }
+
+
+    #lightbox img {
+
+      max-width:
+        90%;
+
+      max-height:
+        80vh;
+
+      margin-top:
+        60px;
+
+      border:
+        1px solid rgba(212, 175, 55, .72);
+
+      border-radius:
+        8px;
+
+      box-shadow:
+
+        0 0 14px
+        rgba(212, 175, 55, .38),
+
+        0 0 35px
+        rgba(40, 210, 255, .11);
+    }
+
+
+    .close {
+
+      position:
+        absolute;
+
+      top:
+        15px;
+
+      right:
+        32px;
+
+      color:
+        #fff;
+
+      font-size:
+        48px;
+
+      cursor:
+        pointer;
+
+      text-shadow:
+        0 0 10px rgba(212, 175, 55, .65);
+    }
+
+
+    /* =====================================================
+       FOOTER
+       ===================================================== */
+
+    footer {
+
+      text-align:
+        center;
+
+      padding:
+        42px 20px;
+
+      color:
+        #877b70;
+
+      font-size:
+        .82rem;
+
+      border-top:
+        1px solid rgba(212, 175, 55, .20);
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(13, 12, 13, .72),
+          rgba(8, 8, 10, .94)
+        );
+
+      box-shadow:
+        0 -8px 28px rgba(0, 0, 0, .30);
+    }
+
+
+    footer a {
+
+      transition:
+        color .3s ease,
+        text-shadow .3s ease;
+    }
+
+
+    footer a:hover {
+
+      text-shadow:
+        0 0 8px currentColor;
+    }
+
+
+    /* =====================================================
+       CELULAR
+       ===================================================== */
+
+    @media (max-width:600px) {
+
+      .info-box {
+
+        margin:
+          18px 12px 10px;
+
+        padding:
+          24px 15px;
+      }
+
+
+      h1 {
+
+        font-size:
+          2.15rem;
+      }
+
+
+      .grid {
+
+        padding:
+          20px 14px 35px;
+
+        gap:
+          20px;
+      }
+
+
+      .img-container {
+
+        height:
+          340px;
+      }
+
+
+      #lightbox img {
+
+        max-width:
+          94%;
+
+        margin-top:
+          80px;
+      }
+
+    }
+
+
+    /* Pantallas táctiles */
+
+    @media (hover:none) {
+
+      .gallery-item {
+
+        box-shadow:
+
+          0 7px 20px
+          rgba(0, 0, 0, .48),
+
+          0 0 13px
+          rgba(212, 175, 55, .12),
+
+          inset 0 0 12px
+          rgba(212, 175, 55, .05);
+      }
+
+    }
+
+
+    @media (prefers-reduced-motion:reduce) {
+
+      *,
+      *::before,
+      *::after {
+
+        animation:
+          none !important;
+
+        transition-duration:
+          .01ms !important;
+      }
+
+    }
+
   </style>
+
 </head>
+
+
 <body>
 
+
+  <!-- =====================================================
+       VIDEO SUPERIOR
+       ===================================================== -->
+
   <div class="video-header">
-    <video autoplay muted loop playsinline id="intro-video">
-      <source src="img/galeria-intro.mp4" type="video/mp4">
+
+    <video
+      autoplay
+      muted
+      loop
+      playsinline
+      id="intro-video"
+    >
+
+      <source
+        src="img/galeria-intro.mp4"
+        type="video/mp4"
+      >
+
       Tu navegador no soporta el video.
+
     </video>
+
   </div>
+
+
+  <!-- =====================================================
+       ENCABEZADO
+       ===================================================== -->
 
   <div class="info-box">
-    <h1>Galería de Creaciones</h1>
-    <div id="filtros" class="filter-container">
-        <button class="filter-btn active" onclick="seleccionarBoton(this); filtrar('todos')">Todos</button>
+
+    <h1>
+      Galería de Creaciones
+    </h1>
+
+
+    <div class="intro-galeria">
+
+      <strong>
+        Cada trabajo nace de una necesidad diferente.
+      </strong>
+
+      <br>
+
+      Explorá algunas de nuestras confecciones,
+      personalizaciones y trabajos a medida.
+
     </div>
-    <a href="index.html" style="color: #d4c5a8; text-decoration: none; font-size: 0.75rem;">← Volver al Inicio</a>
+
+
+    <div
+      id="filtros"
+      class="filter-container"
+    >
+
+      <button
+        class="filter-btn active"
+        onclick="seleccionarBoton(this); filtrar('todos')"
+      >
+        Todos
+      </button>
+
+    </div>
+
+
+    <a
+      href="index.html"
+      class="volver"
+    >
+      ← Volver al Inicio
+    </a>
+
   </div>
 
-  <div id="grid-galeria" class="grid">
-    <p style="grid-column: 1/-1; text-align: center; color: #d4c5a8;">Cargando tus trabajos...</p>
+
+  <!-- =====================================================
+       GALERÍA DINÁMICA
+       ===================================================== -->
+
+  <div
+    id="grid-galeria"
+    class="grid"
+  >
+
+    <p
+      style="
+        grid-column:1/-1;
+        text-align:center;
+        color:#d4c5a8;
+      "
+    >
+      Cargando tus trabajos...
+    </p>
+
   </div>
 
-  <div id="lightbox" onclick="this.style.display='none'">
-    <span class="close">×</span>
-    <img id="lightbox-img">
-    <p id="lightbox-txt" style="color: #f5e6cc; margin-top: 20px; font-size: 1.5rem;"></p>
+
+  <!-- =====================================================
+       LIGHTBOX
+       ===================================================== -->
+
+  <div
+    id="lightbox"
+    onclick="cerrarLB()"
+  >
+
+    <span class="close">
+      ×
+    </span>
+
+    <img
+      id="lightbox-img"
+      alt="Trabajo ampliado de BR Confecciones"
+    >
+
+    <p
+      id="lightbox-txt"
+      style="
+        color:#f5e6cc;
+        margin-top:20px;
+        font-size:1.5rem;
+      "
+    ></p>
+
   </div>
 
-     <footer>
-    BR Confecciones — Capilla del Monte, Córdoba<br>
-    © 2025<br>
-    <small style="color: #d4c5a8; margin-top: 12px; display: block;">
-      ¿Te gustó esta web? Desarrollo sitios simples, elegantes y funcionales para emprendimientos como el tuyo.<br>
-      <a href="https://wa.me/543548584454" style="color: #25D366; text-decoration: none; font-weight: 500;">
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+
+  <footer>
+
+    BR Confecciones —
+    Capilla del Monte, Córdoba
+
+    <br>
+
+    © 2026
+
+    <br><br>
+
+
+    <small
+      style="
+        color:#d4c5a8;
+        display:block;
+      "
+    >
+
+      ¿Te gustó esta web?
+      Desarrollo sitios simples,
+      elegantes y funcionales
+      para emprendimientos como el tuyo.
+
+      <br>
+
+      <a
+        href="https://wa.me/543548584454?text=Hola!%20Me%20gust%C3%B3%20la%20web%20de%20BR%20Confecciones%20y%20quer%C3%ADa%20consultar%20por%20un%20sitio%20similar%20para%20un%20emprendimiento..."
+        style="
+          color:#25D366;
+          text-decoration:none;
+          font-weight:500;
+        "
+      >
         💬 Consultá por tu web personalizada
       </a>
+
     </small>
-<div style="font-size:0.85em; color:#b8a580; margin-top:10px; text-align:center;">
-  📊 ✨ Cada visita nos impulsa a seguir creando con dedicación - 🙏 Gracias por visitarnos
-</div>
+
+
+    <div
+      style="
+        font-size:.85em;
+        color:#b8a580;
+        margin-top:14px;
+      "
+    >
+
+      ✨ Cada trabajo cuenta una historia —
+      gracias por visitar BR Confecciones
+
+    </div>
+
   </footer>
 
-<script>
-  const SHEET_ID = '1fczLyhidq7xLFh6LwONnqn_uGoAqujCSGzTRfgKwxrA';
-  const GID_GALERIA = '1717798500';
-  const URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&gid=${GID_GALERIA}&cache=update`;
 
-  let todosLosTrabajos = [];
+  <!-- =====================================================
+       GOOGLE SHEETS
+       ===================================================== -->
 
-  function seleccionarBoton(elemento) {
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    elemento.classList.add('active');
-  }
+  <script>
 
-  async function cargarGaleria() {
-    try {
-      const res = await fetch(URL);
-      const csv = await res.text();
-      const filas = csv.split(/\r?\n/).slice(1);
-      const contenedor = document.getElementById('grid-galeria');
-      const filtroContainer = document.getElementById('filtros');
-      let categoriasEncontradas = new Set();
+    const SHEET_ID =
+      '1fczLyhidq7xLFh6LwONnqn_uGoAqujCSGzTRfgKwxrA';
 
-      filas.forEach((linea) => {
-        const c = linea.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
-        if (c.length < 3) return;
 
-        const titulo = c[0].replace(/"/g, '').trim();
-        const desc   = c[1].replace(/"/g, '').trim();
-        let   imgRaw = c[2].replace(/"/g, '').trim();
-        const cat    = c[3] ? c[3].replace(/"/g, '').trim().toLowerCase() : 'otros';
+    const GID_GALERIA =
+      '1717798500';
 
-        if (cat !== 'otros' && cat !== '') categoriasEncontradas.add(cat);
 
-        let finalImg = imgRaw;
-        if (imgRaw.includes('drive.google.com')) {
-          let driveID = imgRaw.includes('id=') ? imgRaw.split('id=')[1].split('&')[0] : imgRaw.split('/d/')[1].split('/')[0];
-          finalImg = `https://lh3.googleusercontent.com/u/0/d/${driveID}`;
+    const URL =
+      `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&gid=${GID_GALERIA}&cache=update`;
+
+
+    let todosLosTrabajos = [];
+
+
+    /* =====================================================
+       COLOR SEGÚN CATEGORÍA
+       ===================================================== */
+
+    function obtenerNeon(categoria) {
+
+      const cat =
+        (categoria || '')
+        .toLowerCase();
+
+
+      if (
+        cat.includes('baile') ||
+        cat.includes('danza')
+      ) {
+        return '255,70,170';
+      }
+
+
+      if (
+        cat.includes('disfraz') ||
+        cat.includes('teatro')
+      ) {
+        return '210,75,255';
+      }
+
+
+      if (
+        cat.includes('gastron')
+      ) {
+        return '255,160,55';
+      }
+
+
+      if (
+        cat.includes('hogar') ||
+        cat.includes('cortina') ||
+        cat.includes('funda')
+      ) {
+        return '40,210,255';
+      }
+
+
+      if (
+        cat.includes('educ')
+      ) {
+        return '70,155,255';
+      }
+
+
+      if (
+        cat.includes('mascota')
+      ) {
+        return '70,230,175';
+      }
+
+
+      if (
+        cat.includes('ropa') ||
+        cat.includes('medida')
+      ) {
+        return '65,205,255';
+      }
+
+
+      /* Cualquier categoría nueva */
+      return '212,175,55';
+
+    }
+
+
+    function seleccionarBoton(elemento) {
+
+      document
+        .querySelectorAll('.filter-btn')
+        .forEach(
+          b => b.classList.remove('active')
+        );
+
+
+      elemento
+        .classList
+        .add('active');
+
+    }
+
+
+    /* =====================================================
+       CARGAR GALERÍA
+       ===================================================== */
+
+    async function cargarGaleria() {
+
+      try {
+
+        /* Evita duplicados si se recarga la función */
+
+        todosLosTrabajos = [];
+
+
+        const res =
+          await fetch(URL);
+
+
+        if (!res.ok) {
+
+          throw new Error(
+            'No se pudo conectar con Google Sheets'
+          );
+
         }
 
-        todosLosTrabajos.push({ titulo, desc, img: finalImg, cat });
-      });
 
-      categoriasEncontradas.forEach(cat => {
-        const btn = document.createElement('button');
-        btn.className = 'filter-btn';
-        btn.innerText = cat;
-        btn.onclick = (e) => { seleccionarBoton(btn); filtrar(cat); };
-        filtroContainer.appendChild(btn);
-      });
+        const csv =
+          await res.text();
 
-      mostrarGrilla(todosLosTrabajos);
-    } catch (e) { console.error(e); }
-  }
 
-  function mostrarGrilla(lista) {
-    const contenedor = document.getElementById('grid-galeria');
-    contenedor.innerHTML = lista.map(t => {
-      const textoMensaje = `¡Hola BR Confecciones! Vi este trabajo en su galería y me encantó:\n\n*Producto:* ${t.titulo}\n*Detalles:* ${t.desc}`;
-      const mensajeWsp = encodeURIComponent(textoMensaje);
-      
-      return `
-        <div class="gallery-item">
-          <div class="img-container" onclick="abrirLB('${t.img}', '${t.titulo}')">
-            <img src="${t.img}" loading="lazy">
-          </div>
-          <div class="info-prenda">
-            <strong>${t.titulo}</strong>
-            <small>${t.desc}</small>
-          </div>
-          <a href="https://wa.me/543548584454?text=${mensajeWsp}" class="btn-consulta" target="_blank">
-            💬 Consultar por WhatsApp
-          </a>
-        </div>`;
-    }).join('');
-  }
+        const filas =
+          csv
+          .split(/\r?\n/)
+          .slice(1);
 
-  function filtrar(cat) {
-    if (cat === 'todos') { mostrarGrilla(todosLosTrabajos); } 
-    else { mostrarGrilla(todosLosTrabajos.filter(t => t.cat === cat)); }
-  }
 
-  function abrirLB(src, txt) {
-    document.getElementById('lightbox-img').src = src;
-    document.getElementById('lightbox-txt').innerText = txt;
-    document.getElementById('lightbox').style.display = 'block';
-  }
+        const contenedor =
+          document
+          .getElementById(
+            'grid-galeria'
+          );
 
-  cargarGaleria();
-</script>
+
+        const filtroContainer =
+          document
+          .getElementById(
+            'filtros'
+          );
+
+
+        let categoriasEncontradas =
+          new Set();
+
+
+        filas.forEach(
+          (linea) => {
+
+
+            const c =
+              linea.split(
+                /,(?=(?:(?:[^"]*"){2})*[^"]*$)/
+              );
+
+
+            if (c.length < 3)
+              return;
+
+
+            const titulo =
+              c[0]
+              .replace(/"/g, '')
+              .trim();
+
+
+            const desc =
+              c[1]
+              .replace(/"/g, '')
+              .trim();
+
+
+            let imgRaw =
+              c[2]
+              .replace(/"/g, '')
+              .trim();
+
+
+            const cat =
+              c[3]
+
+              ? c[3]
+                .replace(/"/g, '')
+                .trim()
+                .toLowerCase()
+
+              : 'otros';
+
+
+            if (
+              cat !== 'otros' &&
+              cat !== ''
+            ) {
+
+              categoriasEncontradas
+                .add(cat);
+
+            }
+
+
+            let finalImg =
+              imgRaw;
+
+
+            if (
+              imgRaw.includes(
+                'drive.google.com'
+              )
+            ) {
+
+
+              let driveID;
+
+
+              if (
+                imgRaw.includes('id=')
+              ) {
+
+                driveID =
+                  imgRaw
+                  .split('id=')[1]
+                  .split('&')[0];
+
+              }
+
+              else if (
+                imgRaw.includes('/d/')
+              ) {
+
+                driveID =
+                  imgRaw
+                  .split('/d/')[1]
+                  .split('/')[0];
+
+              }
+
+
+              if (driveID) {
+
+                finalImg =
+                  `https://lh3.googleusercontent.com/u/0/d/${driveID}`;
+
+              }
+
+            }
+
+
+            todosLosTrabajos.push({
+
+              titulo,
+              desc,
+              img: finalImg,
+              cat
+
+            });
+
+
+          }
+        );
+
+
+        /* Crear botones de categorías */
+
+        categoriasEncontradas
+          .forEach(
+            cat => {
+
+
+              const btn =
+                document
+                .createElement(
+                  'button'
+                );
+
+
+              btn.className =
+                'filter-btn';
+
+
+              btn.innerText =
+                cat;
+
+
+              btn.style
+                .setProperty(
+                  '--btn-neon',
+                  obtenerNeon(cat)
+                );
+
+
+              btn.onclick =
+                () => {
+
+                  seleccionarBoton(btn);
+
+                  filtrar(cat);
+
+                };
+
+
+              filtroContainer
+                .appendChild(btn);
+
+
+            }
+          );
+
+
+        mostrarGrilla(
+          todosLosTrabajos
+        );
+
+
+      }
+
+      catch (error) {
+
+
+        console.error(
+          'Error al cargar la galería:',
+          error
+        );
+
+
+        document
+          .getElementById(
+            'grid-galeria'
+          )
+          .innerHTML = `
+
+            <p
+              style="
+                grid-column:1/-1;
+                text-align:center;
+                color:#f5e6cc;
+              "
+            >
+
+              No pudimos cargar la galería
+              en este momento.
+
+            </p>
+
+          `;
+
+
+      }
+
+    }
+
+
+    /* =====================================================
+       MOSTRAR TARJETAS
+       ===================================================== */
+
+    function mostrarGrilla(lista) {
+
+
+      const contenedor =
+        document
+        .getElementById(
+          'grid-galeria'
+        );
+
+
+      contenedor.innerHTML =
+        lista.map(
+          (t, index) => {
+
+
+            const textoMensaje =
+              `¡Hola BR Confecciones! Vi este trabajo en su galería y me encantó:\n\n*Producto:* ${t.titulo}\n*Detalles:* ${t.desc}`;
+
+
+            const mensajeWsp =
+              encodeURIComponent(
+                textoMensaje
+              );
+
+
+            const color =
+              obtenerNeon(
+                t.cat
+              );
+
+
+            return `
+
+              <div
+                class="gallery-item"
+                style="
+                  --neon-rgb:${color};
+                "
+              >
+
+
+                <div
+                  class="img-container"
+                  data-index="${index}"
+                >
+
+                  <img
+                    src="${t.img}"
+                    alt="${t.titulo}"
+                    loading="lazy"
+                  >
+
+                </div>
+
+
+                <div
+                  class="info-prenda"
+                >
+
+                  <strong>
+                    ${t.titulo}
+                  </strong>
+
+                  <small>
+                    ${t.desc}
+                  </small>
+
+                </div>
+
+
+                <a
+                  href="https://wa.me/543548584454?text=${mensajeWsp}"
+                  class="btn-consulta"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+
+                  💬 Consultar por WhatsApp
+
+                </a>
+
+
+              </div>
+
+            `;
+
+
+          }
+        )
+        .join('');
+
+
+      /*
+        Abrimos el lightbox desde JavaScript.
+        Así evitamos problemas si un título
+        contiene comillas u otros caracteres.
+      */
+
+      document
+        .querySelectorAll(
+          '.img-container'
+        )
+        .forEach(
+          elemento => {
+
+
+            elemento
+              .addEventListener(
+                'click',
+                () => {
+
+
+                  const indice =
+                    Number(
+                      elemento.dataset.index
+                    );
+
+
+                  const trabajo =
+                    lista[indice];
+
+
+                  abrirLB(
+                    trabajo.img,
+                    trabajo.titulo
+                  );
+
+
+                }
+              );
+
+
+          }
+        );
+
+    }
+
+
+    /* =====================================================
+       FILTRAR
+       ===================================================== */
+
+    function filtrar(cat) {
+
+
+      if (
+        cat === 'todos'
+      ) {
+
+
+        mostrarGrilla(
+          todosLosTrabajos
+        );
+
+
+      }
+
+      else {
+
+
+        mostrarGrilla(
+
+          todosLosTrabajos
+          .filter(
+            t => t.cat === cat
+          )
+
+        );
+
+
+      }
+
+    }
+
+
+    /* =====================================================
+       LIGHTBOX
+       ===================================================== */
+
+    function abrirLB(
+      src,
+      txt
+    ) {
+
+
+      document
+        .getElementById(
+          'lightbox-img'
+        )
+        .src =
+          src;
+
+
+      document
+        .getElementById(
+          'lightbox-txt'
+        )
+        .innerText =
+          txt;
+
+
+      document
+        .getElementById(
+          'lightbox'
+        )
+        .style.display =
+          'block';
+
+
+    }
+
+
+    function cerrarLB() {
+
+
+      document
+        .getElementById(
+          'lightbox'
+        )
+        .style.display =
+          'none';
+
+
+    }
+
+
+    /* ESC para cerrar imagen */
+
+    document
+      .addEventListener(
+        'keydown',
+        event => {
+
+
+          if (
+            event.key === 'Escape'
+          ) {
+
+            cerrarLB();
+
+          }
+
+
+        }
+      );
+
+
+    cargarGaleria();
+
+  </script>
+
+
 </body>
+
 </html>
