@@ -1,167 +1,1458 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BR Confecciones – Catálogo</title>
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-  <meta property="og:title" content="BR Confecciones – Catálogo de Productos">
-  <meta property="og:description" content="Confección artesanal a medida en Capilla del Monte. Disfraces, ropa de baile, cortinas y más — con precios y contacto directo por WhatsApp.">
-  <meta property="og:image" content="https://brconfecciones.github.io/img/Logo1.jpg">
-  <meta property="og:url" content="https://brconfecciones.github.io/catalogo.html">
+  <title>Catálogo | BR Confecciones</title>
+
+  <!-- =====================================================
+       SEO
+       ===================================================== -->
+
+  <meta
+    name="description"
+    content="Catálogo de BR Confecciones en Capilla del Monte, Córdoba. Productos, prendas y trabajos de confección con consulta directa por WhatsApp."
+  >
+
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="BR Confecciones">
+  <meta name="theme-color" content="#120d0b">
+
+  <link
+    rel="canonical"
+    href="https://brconfecciones.github.io/catalogo.html"
+  >
+
+
+  <!-- =====================================================
+       OPEN GRAPH
+       ===================================================== -->
+
+  <meta
+    property="og:title"
+    content="Catálogo | BR Confecciones"
+  >
+
+  <meta
+    property="og:description"
+    content="Explorá productos y trabajos de BR Confecciones y consultanos directamente por WhatsApp."
+  >
+
+  <meta
+    property="og:image"
+    content="https://brconfecciones.github.io/img/Logo1.jpg"
+  >
+
+  <meta
+    property="og:image:alt"
+    content="BR Confecciones"
+  >
+
+  <meta
+    property="og:url"
+    content="https://brconfecciones.github.io/catalogo.html"
+  >
+
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="BR Confecciones">
   <meta property="og:locale" content="es_AR">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
-  <style>
-    body { margin: 0; font-family: 'Montserrat', sans-serif; background: #1b1410; color: #fff; text-align: center; min-height: 100vh; }
-    header { padding: 50px 20px; background: rgba(0,0,0,0.3); border-bottom: 1px solid #3a2e25; }
-    h1 { font-family: 'Cormorant Garamond', serif; color: #f5e6cc; font-size: 2.8rem; margin: 0; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
-    
-    .productos { display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; padding: 40px 20px; max-width: 1200px; margin: 0 auto; }
-    
-    .card { 
-      width: 300px; 
-      background: rgba(42, 32, 25, 0.9); 
-      border: 1px solid #4a3b2f; 
-      border-radius: 15px; 
-      overflow: hidden; 
-      transition: 0.3s; 
-      box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-      display: flex;
-      flex-direction: column;
-    }
-    
-    .card:hover { transform: translateY(-10px); border-color: #d4af37; box-shadow: 0 0 20px rgba(212, 175, 55, 0.2); }
-    
-    .card img { 
-      width: 100%; 
-      height: 400px; 
-      object-fit: contain; 
-      background-color: #140e0a; 
-      border-bottom: 1px solid #3a2e25;
-    }
-    
-    .info { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
-    .info h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: #f5e6cc; margin: 0 0 10px; }
-    
-    /* ESTILO DE PRECIO CORREGIDO */
-    .precio-contenedor {
-      margin: 10px 0 15px;
-      color: #d4af37;
-      display: flex;
-      justify-content: center;
-      align-items: baseline;
-      gap: 6px; /* Un poquito más de espacio entre palabras */
-    }
-    .precio-etiqueta { font-size: 0.9rem; opacity: 0.9; font-weight: 400; }
-    .precio-monto { font-weight: 600; font-size: 1.5rem; }
-    .precio-moneda { font-size: 0.85rem; font-weight: 400; opacity: 0.9; }
 
-    .desc { font-size: 0.95rem; color: #ccc; min-height: 45px; line-height: 1.4; margin-bottom: 15px; }
-    
-    .btn-wsp { 
-      display: block; 
-      background: #25d366; 
-      color: #fff; 
-      text-decoration: none; 
-      padding: 14px; 
-      border-radius: 30px; 
-      font-weight: bold; 
-      margin-top: auto; 
-      transition: 0.3s; 
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+
+  <!-- =====================================================
+       X / TWITTER
+       ===================================================== -->
+
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta
+    name="twitter:title"
+    content="Catálogo | BR Confecciones"
+  >
+
+  <meta
+    name="twitter:description"
+    content="Productos y trabajos de confección de BR Confecciones en Capilla del Monte, Córdoba."
+  >
+
+  <meta
+    name="twitter:image"
+    content="https://brconfecciones.github.io/img/Logo1.jpg"
+  >
+
+
+  <!-- FAVICON ACTUAL -->
+
+  <link
+    rel="icon"
+    href="favicon.ico"
+    type="image/x-icon"
+  >
+
+
+  <!-- FUENTES -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@400;500&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <style>
+
+    * {
+      box-sizing: border-box;
     }
-    .btn-wsp:hover { background: #128c7e; transform: scale(1.05); }
-    
-    .volver { display: inline-block; margin-top: 20px; color: #f5e6cc; text-decoration: none; font-size: 0.9rem; opacity: 0.8; }
-    .volver:hover { opacity: 1; text-decoration: underline; }
-    
-    footer { padding: 40px; color: #666; font-size: 0.8rem; }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    body {
+
+      margin: 0;
+
+      font-family:
+        'Montserrat',
+        sans-serif;
+
+      color: #fff;
+
+      text-align: center;
+
+      min-height: 100vh;
+
+      overflow-x: hidden;
+
+      background:
+
+        radial-gradient(
+          circle at 15% 20%,
+          rgba(212, 175, 55, .09),
+          transparent 30%
+        ),
+
+        radial-gradient(
+          circle at 82% 30%,
+          rgba(40, 210, 255, .065),
+          transparent 30%
+        ),
+
+        radial-gradient(
+          circle at 55% 90%,
+          rgba(210, 75, 255, .045),
+          transparent 34%
+        ),
+
+        linear-gradient(
+          145deg,
+          #08090c 0%,
+          #120d0b 42%,
+          #1b1410 72%,
+          #090b10 100%
+        );
+
+      position: relative;
+    }
+
+
+    /* =====================================================
+       LUCES AMBIENTALES
+       ===================================================== */
+
+    body::before {
+
+      content: "";
+
+      position: fixed;
+
+      width: 450px;
+      height: 450px;
+
+      left: -230px;
+      top: 20%;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(212, 175, 55, .10),
+          transparent 68%
+        );
+
+      filter: blur(20px);
+
+      pointer-events: none;
+
+      z-index: -1;
+
+      animation:
+        luzDorada 18s ease-in-out infinite alternate;
+    }
+
+
+    body::after {
+
+      content: "";
+
+      position: fixed;
+
+      width: 480px;
+      height: 480px;
+
+      right: -240px;
+      bottom: 4%;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(40, 210, 255, .075),
+          transparent 68%
+        );
+
+      filter: blur(22px);
+
+      pointer-events: none;
+
+      z-index: -1;
+
+      animation:
+        luzAzul 16s ease-in-out infinite alternate;
+    }
+
+
+    @keyframes luzDorada {
+
+      from {
+        transform: translateY(-20px) scale(.94);
+        opacity: .60;
+      }
+
+      to {
+        transform: translateY(45px) scale(1.08);
+        opacity: 1;
+      }
+
+    }
+
+
+    @keyframes luzAzul {
+
+      from {
+        transform: translateY(35px) scale(.94);
+        opacity: .60;
+      }
+
+      to {
+        transform: translateY(-35px) scale(1.08);
+        opacity: 1;
+      }
+
+    }
+
+
+    /* =====================================================
+       CABECERA
+       ===================================================== */
+
+    header {
+
+      max-width: 900px;
+
+      margin:
+        35px auto 10px;
+
+      padding:
+        35px 20px 30px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(20, 15, 12, .93),
+          rgba(15, 16, 20, .90)
+        );
+
+      backdrop-filter:
+        blur(5px);
+
+      border:
+        1px solid rgba(212, 175, 55, .50);
+
+      border-radius:
+        14px;
+
+      box-shadow:
+
+        0 12px 30px
+        rgba(0, 0, 0, .52),
+
+        0 0 12px
+        rgba(212, 175, 55, .22),
+
+        0 0 28px
+        rgba(40, 210, 255, .07),
+
+        inset 0 0 18px
+        rgba(212, 175, 55, .06);
+
+      position: relative;
+
+      z-index: 1;
+    }
+
+
+    h1 {
+
+      font-family:
+        'Cormorant Garamond',
+        serif;
+
+      color:
+        #f5e6cc;
+
+      font-size:
+        2.8rem;
+
+      margin:
+        0 0 8px;
+
+      text-shadow:
+
+        0 0 8px
+        rgba(212, 175, 55, .50),
+
+        0 0 20px
+        rgba(212, 175, 55, .18);
+    }
+
+
+    .intro-catalogo {
+
+      color:
+        #cdbda6;
+
+      max-width:
+        640px;
+
+      margin:
+        8px auto 4px;
+
+      font-size:
+        .96rem;
+
+      line-height:
+        1.55;
+    }
+
+
+    .intro-catalogo strong {
+
+      color:
+        #f5e6cc;
+
+      font-weight:
+        500;
+    }
+
+
+    /* =====================================================
+       VOLVER
+       ===================================================== */
+
+    .volver {
+
+      display:
+        inline-block;
+
+      margin-top:
+        18px;
+
+      color:
+        #d4c5a8;
+
+      text-decoration:
+        none;
+
+      font-size:
+        .85rem;
+
+      opacity:
+        .90;
+
+      transition:
+        .3s;
+    }
+
+
+    .volver:hover {
+
+      opacity:
+        1;
+
+      color:
+        #fff5db;
+
+      text-shadow:
+        0 0 8px
+        rgba(212, 175, 55, .70);
+    }
+
+
+    /* =====================================================
+       CONTENEDOR DE PRODUCTOS
+       ===================================================== */
+
+    .productos {
+
+      display:
+        flex;
+
+      flex-wrap:
+        wrap;
+
+      justify-content:
+        center;
+
+      align-items:
+        stretch;
+
+      gap:
+        28px;
+
+      padding:
+        40px 20px 50px;
+
+      max-width:
+        1250px;
+
+      margin:
+        0 auto;
+    }
+
+
+    /* =====================================================
+       TARJETAS
+       ===================================================== */
+
+    .card {
+
+      --neon-rgb:
+        212,175,55;
+
+      width:
+        300px;
+
+      background:
+        linear-gradient(
+          150deg,
+          rgba(42, 32, 25, .94),
+          rgba(17, 18, 22, .94)
+        );
+
+      border:
+        1px solid rgba(212, 175, 55, .32);
+
+      border-radius:
+        15px;
+
+      overflow:
+        hidden;
+
+      display:
+        flex;
+
+      flex-direction:
+        column;
+
+      position:
+        relative;
+
+      box-shadow:
+
+        0 10px 24px
+        rgba(0, 0, 0, .50),
+
+        0 0 11px
+        rgba(212, 175, 55, .10),
+
+        inset 0 0 12px
+        rgba(212, 175, 55, .04);
+
+      transition:
+
+        transform .38s ease,
+
+        border-color .38s ease,
+
+        box-shadow .38s ease;
+    }
+
+
+    /* Luz dorada tenue permanente */
+
+    .card::after {
+
+      content: "";
+
+      position:
+        absolute;
+
+      inset:
+        0;
+
+      pointer-events:
+        none;
+
+      border-radius:
+        15px;
+
+      opacity:
+        .23;
+
+      box-shadow:
+        inset 0 0 20px
+        rgba(212, 175, 55, .14);
+
+      transition:
+        .38s ease;
+    }
+
+
+    .card:hover {
+
+      transform:
+        translateY(-10px)
+        scale(1.012);
+
+      border-color:
+        rgba(var(--neon-rgb), .94);
+
+      box-shadow:
+
+        0 17px 36px
+        rgba(0, 0, 0, .60),
+
+        0 0 10px
+        rgba(var(--neon-rgb), .58),
+
+        0 0 24px
+        rgba(var(--neon-rgb), .33),
+
+        0 0 44px
+        rgba(var(--neon-rgb), .14),
+
+        inset 0 0 20px
+        rgba(var(--neon-rgb), .13);
+    }
+
+
+    .card:hover::after {
+
+      opacity:
+        .70;
+
+      box-shadow:
+        inset 0 0 26px
+        rgba(var(--neon-rgb), .20);
+    }
+
+
+    /* =====================================================
+       IMAGEN DEL PRODUCTO
+       ===================================================== */
+
+    .card img {
+
+      width:
+        100%;
+
+      height:
+        400px;
+
+      object-fit:
+        contain;
+
+      background:
+        linear-gradient(
+          145deg,
+          #100c0a,
+          #0a0b0e
+        );
+
+      border-bottom:
+        1px solid rgba(212, 175, 55, .18);
+
+      display:
+        block;
+
+      transition:
+
+        transform .60s ease,
+
+        filter .50s ease;
+    }
+
+
+    .card:hover img {
+
+      transform:
+        scale(1.025);
+
+      filter:
+
+        brightness(1.07)
+
+        contrast(1.03)
+
+        saturate(1.08);
+    }
+
+
+    /* =====================================================
+       INFORMACIÓN
+       ===================================================== */
+
+    .info {
+
+      padding:
+        20px;
+
+      flex-grow:
+        1;
+
+      display:
+        flex;
+
+      flex-direction:
+        column;
+
+      justify-content:
+        space-between;
+
+      position:
+        relative;
+
+      z-index:
+        2;
+    }
+
+
+    .info h3 {
+
+      font-family:
+        'Cormorant Garamond',
+        serif;
+
+      font-size:
+        1.65rem;
+
+      color:
+        #f5e6cc;
+
+      margin:
+        0 0 10px;
+
+      transition:
+        color .35s ease,
+        text-shadow .35s ease;
+    }
+
+
+    .card:hover .info h3 {
+
+      color:
+        #fff;
+
+      text-shadow:
+
+        0 0 7px
+        rgba(var(--neon-rgb), .82),
+
+        0 0 16px
+        rgba(var(--neon-rgb), .44);
+    }
+
+
+    .desc {
+
+      font-size:
+        .95rem;
+
+      color:
+        #ccc;
+
+      min-height:
+        45px;
+
+      line-height:
+        1.45;
+
+      margin-bottom:
+        15px;
+    }
+
+
+    /* =====================================================
+       PRECIO
+       ===================================================== */
+
+    .precio-contenedor {
+
+      margin:
+        10px 0 15px;
+
+      color:
+        #d4af37;
+
+      display:
+        flex;
+
+      justify-content:
+        center;
+
+      align-items:
+        baseline;
+
+      gap:
+        6px;
+
+      transition:
+        color .35s ease,
+        text-shadow .35s ease;
+    }
+
+
+    .card:hover
+    .precio-contenedor {
+
+      color:
+        #f2d87c;
+
+      text-shadow:
+        0 0 9px
+        rgba(var(--neon-rgb), .40);
+    }
+
+
+    .precio-etiqueta {
+
+      font-size:
+        .90rem;
+
+      opacity:
+        .90;
+
+      font-weight:
+        400;
+    }
+
+
+    .precio-monto {
+
+      font-weight:
+        600;
+
+      font-size:
+        1.50rem;
+    }
+
+
+    .precio-moneda {
+
+      font-size:
+        .85rem;
+
+      font-weight:
+        400;
+
+      opacity:
+        .90;
+    }
+
+
+    /* =====================================================
+       WHATSAPP
+       ===================================================== */
+
+    .btn-wsp {
+
+      display:
+        block;
+
+      background:
+        linear-gradient(
+          135deg,
+          #25d366,
+          #1ebe5d
+        );
+
+      color:
+        #fff;
+
+      text-decoration:
+        none;
+
+      padding:
+        14px;
+
+      border-radius:
+        30px;
+
+      font-weight:
+        600;
+
+      margin-top:
+        auto;
+
+      transition:
+
+        transform .30s ease,
+
+        background .30s ease,
+
+        box-shadow .30s ease;
+
+      box-shadow:
+        0 4px 12px
+        rgba(0, 0, 0, .30);
+    }
+
+
+    .btn-wsp:hover {
+
+      background:
+        linear-gradient(
+          135deg,
+          #20c15a,
+          #128c7e
+        );
+
+      transform:
+        scale(1.035);
+
+      box-shadow:
+
+        0 0 10px
+        rgba(37, 211, 102, .58),
+
+        0 0 22px
+        rgba(37, 211, 102, .24);
+    }
+
+
+    /* =====================================================
+       FOOTER
+       ===================================================== */
+
+    footer {
+
+      padding:
+        42px 20px;
+
+      color:
+        #877b70;
+
+      font-size:
+        .82rem;
+
+      border-top:
+        1px solid rgba(212, 175, 55, .20);
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(13, 12, 13, .70),
+          rgba(8, 8, 10, .94)
+        );
+
+      box-shadow:
+        0 -8px 28px
+        rgba(0, 0, 0, .30);
+    }
+
+
+    /* =====================================================
+       CELULAR
+       ===================================================== */
+
+    @media (max-width:600px) {
+
+      header {
+
+        margin:
+          18px 12px 8px;
+
+        padding:
+          25px 15px;
+      }
+
+
+      h1 {
+
+        font-size:
+          2.20rem;
+      }
+
+
+      .productos {
+
+        padding:
+          28px 14px 40px;
+
+        gap:
+          22px;
+      }
+
+
+      .card {
+
+        width:
+          100%;
+
+        max-width:
+          340px;
+      }
+
+
+      .card img {
+
+        height:
+          390px;
+      }
+
+    }
+
+
+    /* En celulares no dependemos del hover */
+
+    @media (hover:none) {
+
+      .card {
+
+        box-shadow:
+
+          0 8px 22px
+          rgba(0, 0, 0, .50),
+
+          0 0 13px
+          rgba(212, 175, 55, .12),
+
+          inset 0 0 12px
+          rgba(212, 175, 55, .05);
+      }
+
+    }
+
+
+    /* Reducir animaciones si el dispositivo lo solicita */
+
+    @media (prefers-reduced-motion:reduce) {
+
+      *,
+      *::before,
+      *::after {
+
+        animation:
+          none !important;
+
+        transition-duration:
+          .01ms !important;
+      }
+
+    }
+
   </style>
+
 </head>
+
+
 <body>
 
-<header>
-  <h1>Catálogo BR Confecciones</h1>
-  <a href="index.html" class="volver">← Volver a la página principal</a>
-</header>
 
-<div id="contenedor-productos" class="productos">
-  <p style="color: #f5e6cc; font-family: 'Cormorant Garamond', serif; font-size: 1.5rem;">Abriendo el taller...</p>
-</div>
+  <!-- =====================================================
+       CABECERA
+       ===================================================== -->
 
-<footer>
-  BR Confecciones — Capilla del Monte, Córdoba<br>© 2026.
-</footer>
+  <header>
 
-<script>
-  const SHEET_ID = '1fczLyhidq7xLFh6LwONnqn_uGoAqujCSGzTRfgKwxrA';
-  const URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&gid=0`;
+    <h1>
+      Catálogo BR Confecciones
+    </h1>
 
-  async function cargarCatalogo() {
-    try {
-      const respuesta = await fetch(URL);
-      const csv = await respuesta.text();
-      const filas = csv.split(/\r?\n/).slice(1);
-      const contenedor = document.getElementById('contenedor-productos');
-      let htmlFinal = '';
 
-      filas.forEach(linea => {
-        const c = linea.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
-        if (c.length < 5) return;
+    <div class="intro-catalogo">
 
-        const nombre = c[0].replace(/"/g, '');
-        const precioBruto = c[1].replace(/"/g, '').trim();
-        const desc   = c[2].replace(/"/g, '');
-        let   imgRaw = c[3].replace(/"/g, '').trim();
-        const estado = c[4].replace(/"/g, '').trim().toLowerCase();
+      <strong>
+        Algunas creaciones listas para inspirarte.
+      </strong>
 
-        if (estado === 'activo') {
-          // Limpiamos el precio por si tiene $ o ARS de más en el Excel
-          const precioLimpio = precioBruto.replace('$', '').replace('ARS', '').trim();
-          
-          let finalImg = '';
-          if (imgRaw.includes('drive.google.com')) {
-              let id = imgRaw.includes('id=') ? imgRaw.split('id=')[1].split('&')[0] : imgRaw.split('/d/')[1].split('/')[0];
-              finalImg = `https://lh3.googleusercontent.com/u/0/d/${id}`;
-          } else {
-              finalImg = imgRaw;
-          }
+      <br>
 
-        htmlFinal += `
-            <div class="card">
-              <img src="${finalImg}" alt="${nombre}" loading="lazy">
-              <div class="info">
-                <div>
-                  <h3>${nombre}</h3>
-                  <p class="desc">${desc}</p>
-                </div>
-                <div>
-                  <div class="precio-contenedor">
-                    <span class="precio-etiqueta">Desde</span>
-                    <span class="precio-monto">$${precioLimpio}</span>
-                    <span class="precio-moneda">ARS</span>
-                  </div>
-                  <a href="https://wa.me/543548584454?text=Hola!%20Me%20interesa%20el%20producto:%20${encodeURIComponent(nombre)}" class="btn-wsp">
-                    💬 Consultar por WhatsApp
-                  </a>
-                </div>
-              </div>
-            </div>`;
+      Los valores publicados son orientativos
+      desde el precio indicado.
+      Consultanos por medidas, detalles
+      y personalizaciones.
+
+    </div>
+
+
+    <a
+      href="index.html"
+      class="volver"
+    >
+      ← Volver a la página principal
+    </a>
+
+  </header>
+
+
+  <!-- =====================================================
+       PRODUCTOS
+       ===================================================== -->
+
+  <div
+    id="contenedor-productos"
+    class="productos"
+  >
+
+    <p
+      style="
+        color:#f5e6cc;
+        font-family:'Cormorant Garamond',serif;
+        font-size:1.5rem;
+      "
+    >
+
+      Abriendo el taller...
+
+    </p>
+
+  </div>
+
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+
+  <footer>
+
+    BR Confecciones —
+    Capilla del Monte, Córdoba
+
+    <br>
+
+    © 2026
+
+    <div
+      style="
+        margin-top:10px;
+        color:#b8a580;
+      "
+    >
+
+      ¿Buscás algo diferente?
+      Contanos tu idea.
+
+    </div>
+
+  </footer>
+
+
+  <!-- =====================================================
+       GOOGLE SHEETS
+       ===================================================== -->
+
+  <script>
+
+    const SHEET_ID =
+      '1fczLyhidq7xLFh6LwONnqn_uGoAqujCSGzTRfgKwxrA';
+
+
+    const URL =
+      `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&gid=0`;
+
+
+    /*
+      Colores para las tarjetas.
+
+      No dependen del nombre del producto.
+      Se van alternando automáticamente.
+      Si agregás productos nuevos a Sheets,
+      también reciben uno de estos colores.
+    */
+
+    const COLORES_NEON = [
+
+      '40,210,255',    // cyan
+
+      '210,75,255',    // violeta
+
+      '255,70,170',    // magenta
+
+      '255,160,55',    // ámbar
+
+      '70,230,175',    // verde agua
+
+      '70,155,255'     // azul
+
+    ];
+
+
+    async function cargarCatalogo() {
+
+      try {
+
+
+        const respuesta =
+          await fetch(URL);
+
+
+        if (!respuesta.ok) {
+
+          throw new Error(
+            'No se pudo conectar con Google Sheets'
+          );
+
         }
-      });
 
-      contenedor.innerHTML = htmlFinal || '<p>No hay productos activos en este momento.</p>';
-      
-    } catch (error) {
-      console.error("Error al cargar:", error);
-      document.getElementById('contenedor-productos').innerHTML = 
-        '<p style="color: #f5e6cc;">Error al conectar con el catálogo.</p>';
+
+        const csv =
+          await respuesta.text();
+
+
+        const filas =
+          csv
+          .split(/\r?\n/)
+          .slice(1);
+
+
+        const contenedor =
+          document
+          .getElementById(
+            'contenedor-productos'
+          );
+
+
+        let htmlFinal =
+          '';
+
+
+        let indiceActivo =
+          0;
+
+
+        filas.forEach(
+          linea => {
+
+
+            const c =
+              linea.split(
+                /,(?=(?:(?:[^"]*"){2})*[^"]*$)/
+              );
+
+
+            if (c.length < 5)
+              return;
+
+
+            const nombre =
+              c[0]
+              .replace(/"/g, '')
+              .trim();
+
+
+            const precioBruto =
+              c[1]
+              .replace(/"/g, '')
+              .trim();
+
+
+            const desc =
+              c[2]
+              .replace(/"/g, '')
+              .trim();
+
+
+            let imgRaw =
+              c[3]
+              .replace(/"/g, '')
+              .trim();
+
+
+            const estado =
+              c[4]
+              .replace(/"/g, '')
+              .trim()
+              .toLowerCase();
+
+
+            /* Solamente mostramos productos activos */
+
+            if (
+              estado === 'activo'
+            ) {
+
+
+              const precioLimpio =
+                precioBruto
+                .replace(/\$/g, '')
+                .replace(/ARS/gi, '')
+                .trim();
+
+
+              let finalImg =
+                imgRaw;
+
+
+              /*
+                Conversión automática
+                de imágenes de Google Drive
+              */
+
+              if (
+                imgRaw.includes(
+                  'drive.google.com'
+                )
+              ) {
+
+
+                let id;
+
+
+                if (
+                  imgRaw.includes('id=')
+                ) {
+
+                  id =
+                    imgRaw
+                    .split('id=')[1]
+                    .split('&')[0];
+
+                }
+
+
+                else if (
+                  imgRaw.includes('/d/')
+                ) {
+
+                  id =
+                    imgRaw
+                    .split('/d/')[1]
+                    .split('/')[0];
+
+                }
+
+
+                if (id) {
+
+                  finalImg =
+                    `https://lh3.googleusercontent.com/u/0/d/${id}`;
+
+                }
+
+              }
+
+
+              /*
+                Elegimos automáticamente
+                un color para la tarjeta.
+              */
+
+              const color =
+                COLORES_NEON[
+                  indiceActivo %
+                  COLORES_NEON.length
+                ];
+
+
+              /*
+                WhatsApp contextual:
+                ahora además del nombre
+                incluimos la descripción.
+              */
+
+              const mensaje =
+                `¡Hola BR Confecciones! Vi este producto en su catálogo y quería consultar:\n\n*Producto:* ${nombre}\n*Detalles:* ${desc}`;
+
+
+              const mensajeWsp =
+                encodeURIComponent(
+                  mensaje
+                );
+
+
+              htmlFinal += `
+
+                <div
+                  class="card"
+                  style="
+                    --neon-rgb:${color};
+                  "
+                >
+
+
+                  <img
+                    src="${finalImg}"
+                    alt="${nombre}"
+                    loading="lazy"
+                  >
+
+
+                  <div class="info">
+
+
+                    <div>
+
+                      <h3>
+                        ${nombre}
+                      </h3>
+
+                      <p class="desc">
+                        ${desc}
+                      </p>
+
+                    </div>
+
+
+                    <div>
+
+
+                      <div
+                        class="precio-contenedor"
+                      >
+
+                        <span
+                          class="precio-etiqueta"
+                        >
+                          Desde
+                        </span>
+
+                        <span
+                          class="precio-monto"
+                        >
+                          $${precioLimpio}
+                        </span>
+
+                        <span
+                          class="precio-moneda"
+                        >
+                          ARS
+                        </span>
+
+                      </div>
+
+
+                      <a
+                        href="https://wa.me/543548584454?text=${mensajeWsp}"
+                        class="btn-wsp"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+
+                        💬 Consultar por WhatsApp
+
+                      </a>
+
+
+                    </div>
+
+
+                  </div>
+
+
+                </div>
+
+              `;
+
+
+              indiceActivo++;
+
+            }
+
+          }
+        );
+
+
+        contenedor.innerHTML =
+          htmlFinal ||
+
+          `
+
+            <p
+              style="
+                color:#f5e6cc;
+                font-family:'Cormorant Garamond',serif;
+                font-size:1.4rem;
+              "
+            >
+
+              No hay productos activos
+              en este momento.
+
+            </p>
+
+          `;
+
+
+      }
+
+      catch (error) {
+
+
+        console.error(
+          'Error al cargar el catálogo:',
+          error
+        );
+
+
+        document
+          .getElementById(
+            'contenedor-productos'
+          )
+          .innerHTML = `
+
+            <p
+              style="
+                color:#f5e6cc;
+                font-family:'Cormorant Garamond',serif;
+                font-size:1.4rem;
+              "
+            >
+
+              No pudimos conectar
+              con el catálogo
+              en este momento.
+
+            </p>
+
+          `;
+
+
+      }
+
     }
-  }
 
-  cargarCatalogo();
-</script>
+
+    cargarCatalogo();
+
+  </script>
+
+
 </body>
+
 </html>
