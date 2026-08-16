@@ -19,7 +19,6 @@
 
   <meta name="robots" content="index, follow">
   <meta name="author" content="BR Confecciones">
-  <meta name="theme-color" content="#120d0b">
 
   <link
     rel="canonical"
@@ -80,23 +79,19 @@
     content="https://brconfecciones.github.io/img/Logo1.jpg"
   >
 
-  <!-- FAVICON ACTUAL -->
-  <title>Galería – BR Confecciones</title>
+  <!-- =====================================================
+       ICONOS BR CONFECCIONES
+       ===================================================== -->
 
-<!-- ICONOS BR CONFECCIONES -->
-<link rel="icon" href="favicon.ico" type="image/x-icon">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<link rel="manifest" href="site.webmanifest">
-<meta name="theme-color" content="#1b1410">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#120d0b">
 
-  <link
-    rel="icon"
-    href="favicon.ico"
-    type="image/x-icon"
-  >
-
-  <!-- FUENTES -->
+  <!-- =====================================================
+       FUENTES
+       ===================================================== -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -111,54 +106,41 @@
     rel="stylesheet"
   >
 
-
   <style>
 
     * {
       box-sizing: border-box;
     }
 
-
     html {
       scroll-behavior: smooth;
     }
 
-
     body {
-
       margin: 0;
       padding: 0;
-
       font-family: 'Montserrat', sans-serif;
-
       color: #fff;
-
       line-height: 1.6;
-
       overflow-x: hidden;
-
       min-height: 100vh;
 
       background:
-
         radial-gradient(
           circle at 15% 25%,
           rgba(40, 210, 255, .075),
           transparent 30%
         ),
-
         radial-gradient(
           circle at 84% 34%,
           rgba(212, 175, 55, .10),
           transparent 34%
         ),
-
         radial-gradient(
           circle at 50% 85%,
           rgba(190, 65, 255, .055),
           transparent 35%
         ),
-
         linear-gradient(
           145deg,
           #08090c 0%,
@@ -170,23 +152,17 @@
       position: relative;
     }
 
-
     /* =====================================================
        LUCES AMBIENTALES DEL FONDO
        ===================================================== */
 
     body::before {
-
       content: "";
-
       position: fixed;
-
       width: 430px;
       height: 430px;
-
       top: 15%;
       left: -220px;
-
       border-radius: 50%;
 
       background:
@@ -197,28 +173,18 @@
         );
 
       filter: blur(20px);
-
       pointer-events: none;
-
       z-index: -1;
-
-      animation:
-        ambienteAzul 16s ease-in-out infinite alternate;
+      animation: ambienteAzul 16s ease-in-out infinite alternate;
     }
 
-
     body::after {
-
       content: "";
-
       position: fixed;
-
       width: 540px;
       height: 540px;
-
       right: -260px;
       bottom: 3%;
-
       border-radius: 50%;
 
       background:
@@ -229,18 +195,12 @@
         );
 
       filter: blur(22px);
-
       pointer-events: none;
-
       z-index: -1;
-
-      animation:
-        ambienteDorado 19s ease-in-out infinite alternate;
+      animation: ambienteDorado 19s ease-in-out infinite alternate;
     }
 
-
     @keyframes ambienteAzul {
-
       from {
         transform: translateY(-20px) scale(.95);
         opacity: .65;
@@ -250,12 +210,9 @@
         transform: translateY(45px) scale(1.08);
         opacity: 1;
       }
-
     }
 
-
     @keyframes ambienteDorado {
-
       from {
         transform: translateY(30px) scale(.92);
         opacity: .60;
@@ -265,61 +222,43 @@
         transform: translateY(-35px) scale(1.08);
         opacity: 1;
       }
-
     }
-
 
     /* =====================================================
        VIDEO DE CABECERA
        ===================================================== */
 
     .video-header {
-
       width: 100%;
-
       line-height: 0;
-
       background: #000;
 
       border-bottom:
         1px solid rgba(212, 175, 55, .65);
 
       box-shadow:
-
         0 7px 30px rgba(0, 0, 0, .68),
-
         0 0 14px rgba(212, 175, 55, .25),
-
         0 0 34px rgba(40, 210, 255, .11);
 
       position: relative;
-
       z-index: 1;
     }
 
-
     #intro-video {
-
       width: 100%;
-
       height: auto;
-
       display: block;
     }
-
 
     /* =====================================================
        ENCABEZADO
        ===================================================== */
 
     .info-box {
-
       text-align: center;
-
       padding: 30px 20px 26px;
-
       max-width: 900px;
-
       margin: 30px auto;
 
       background:
@@ -337,131 +276,77 @@
       border-radius: 14px;
 
       box-shadow:
-
         0 12px 30px rgba(0, 0, 0, .52),
-
         0 0 12px rgba(212, 175, 55, .22),
-
         0 0 28px rgba(212, 175, 55, .09),
-
         inset 0 0 18px rgba(212, 175, 55, .06);
 
       position: relative;
-
       z-index: 1;
     }
 
-
     h1 {
-
-      font-family:
-        'Cormorant Garamond',
-        serif;
-
+      font-family: 'Cormorant Garamond', serif;
       color: #f5e6cc;
-
       font-size: 2.7rem;
-
       margin: 0 0 8px;
 
       text-shadow:
-
         0 0 8px rgba(212, 175, 55, .48),
-
         0 0 20px rgba(212, 175, 55, .18);
     }
 
-
     .intro-galeria {
-
       max-width: 680px;
-
       margin: 8px auto 20px;
-
       color: #cdbda6;
-
       font-size: .96rem;
     }
 
-
     .intro-galeria strong {
-
       color: #f5e6cc;
-
       font-weight: 500;
     }
-
 
     /* =====================================================
        FILTROS
        ===================================================== */
 
     .filter-container {
-
       margin: 18px 0;
-
       display: flex;
-
       flex-wrap: wrap;
-
       justify-content: center;
-
       gap: 9px;
     }
 
-
     .filter-btn {
-
       --btn-neon: 212, 175, 55;
 
-      background:
-        rgba(20, 17, 16, .70);
+      background: rgba(20, 17, 16, .70);
 
       border:
         1px solid rgba(212, 175, 55, .30);
 
       color: #d4c5a8;
-
-      padding:
-        7px 18px;
-
-      border-radius:
-        22px;
-
-      cursor:
-        pointer;
-
-      text-transform:
-        capitalize;
-
-      font-family:
-        'Montserrat',
-        sans-serif;
-
-      font-size:
-        .85rem;
+      padding: 7px 18px;
+      border-radius: 22px;
+      cursor: pointer;
+      text-transform: capitalize;
+      font-family: 'Montserrat', sans-serif;
+      font-size: .85rem;
 
       transition:
-
         transform .30s ease,
-
         border-color .30s ease,
-
         color .30s ease,
-
         box-shadow .30s ease,
-
         background .30s ease;
     }
 
-
     .filter-btn:hover {
-
-      transform:
-        translateY(-2px);
-
-      color:
-        #fff;
+      transform: translateY(-2px);
+      color: #fff;
 
       border-color:
         rgba(var(--btn-neon), .90);
@@ -470,17 +355,11 @@
         rgba(var(--btn-neon), .09);
 
       box-shadow:
-
-        0 0 8px
-        rgba(var(--btn-neon), .50),
-
-        0 0 18px
-        rgba(var(--btn-neon), .22);
+        0 0 8px rgba(var(--btn-neon), .50),
+        0 0 18px rgba(var(--btn-neon), .22);
     }
 
-
     .filter-btn.active {
-
       background:
         linear-gradient(
           135deg,
@@ -488,65 +367,36 @@
           #e6ca73
         );
 
-      color:
-        #17120d;
-
-      border-color:
-        #e6ca73;
+      color: #17120d;
+      border-color: #e6ca73;
 
       box-shadow:
+        0 0 10px rgba(212, 175, 55, .60),
+        0 0 22px rgba(212, 175, 55, .23);
 
-        0 0 10px
-        rgba(212, 175, 55, .60),
-
-        0 0 22px
-        rgba(212, 175, 55, .23);
-
-      font-weight:
-        600;
+      font-weight: 600;
     }
-
 
     .volver {
-
-      display:
-        inline-block;
-
-      color:
-        #d4c5a8;
-
-      text-decoration:
-        none;
-
-      font-size:
-        .80rem;
-
-      margin-top:
-        4px;
-
-      transition:
-        .3s;
+      display: inline-block;
+      color: #d4c5a8;
+      text-decoration: none;
+      font-size: .80rem;
+      margin-top: 4px;
+      transition: .3s;
     }
-
 
     .volver:hover {
-
-      color:
-        #fff5db;
-
-      text-shadow:
-        0 0 8px rgba(212, 175, 55, .70);
+      color: #fff5db;
+      text-shadow: 0 0 8px rgba(212, 175, 55, .70);
     }
-
 
     /* =====================================================
        GRILLA
        ===================================================== */
 
     .grid {
-
-      display:
-        grid;
+      display: grid;
 
       grid-template-columns:
         repeat(
@@ -554,28 +404,18 @@
           minmax(280px, 1fr)
         );
 
-      gap:
-        24px;
-
-      padding:
-        25px 20px 45px;
-
-      max-width:
-        1200px;
-
-      margin:
-        0 auto;
+      gap: 24px;
+      padding: 25px 20px 45px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
-
 
     /* =====================================================
        TARJETAS
        ===================================================== */
 
     .gallery-item {
-
-      --neon-rgb:
-        212, 175, 55;
+      --neon-rgb: 212, 175, 55;
 
       background:
         linear-gradient(
@@ -584,76 +424,45 @@
           rgba(17, 18, 22, .93)
         );
 
-      border-radius:
-        14px;
-
-      overflow:
-        hidden;
+      border-radius: 14px;
+      overflow: hidden;
 
       border:
         1px solid rgba(212, 175, 55, .30);
 
-      position:
-        relative;
+      position: relative;
 
       box-shadow:
-
         0 8px 22px rgba(0, 0, 0, .48),
-
         0 0 10px rgba(212, 175, 55, .10),
-
         inset 0 0 12px rgba(212, 175, 55, .04);
 
-      display:
-        flex;
-
-      flex-direction:
-        column;
+      display: flex;
+      flex-direction: column;
 
       transition:
-
         transform .38s ease,
-
         box-shadow .38s ease,
-
         border-color .38s ease;
     }
 
-
-    /* Luz dorada permanente */
-
     .gallery-item::after {
-
       content: "";
-
-      position:
-        absolute;
-
-      inset:
-        0;
-
-      pointer-events:
-        none;
-
-      border-radius:
-        14px;
-
-      opacity:
-        .22;
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      border-radius: 14px;
+      opacity: .22;
 
       box-shadow:
         inset 0 0 20px rgba(212, 175, 55, .14);
 
       transition:
-
         opacity .38s ease,
-
         box-shadow .38s ease;
     }
 
-
     .gallery-item:hover {
-
       transform:
         translateY(-8px)
         scale(1.012);
@@ -662,105 +471,56 @@
         rgba(var(--neon-rgb), .94);
 
       box-shadow:
-
-        0 16px 34px
-        rgba(0, 0, 0, .58),
-
-        0 0 10px
-        rgba(var(--neon-rgb), .58),
-
-        0 0 24px
-        rgba(var(--neon-rgb), .34),
-
-        0 0 44px
-        rgba(var(--neon-rgb), .15),
-
-        inset 0 0 20px
-        rgba(var(--neon-rgb), .13);
+        0 16px 34px rgba(0, 0, 0, .58),
+        0 0 10px rgba(var(--neon-rgb), .58),
+        0 0 24px rgba(var(--neon-rgb), .34),
+        0 0 44px rgba(var(--neon-rgb), .15),
+        inset 0 0 20px rgba(var(--neon-rgb), .13);
     }
-
 
     .gallery-item:hover::after {
-
-      opacity:
-        .72;
+      opacity: .72;
 
       box-shadow:
-        inset 0 0 26px
-        rgba(var(--neon-rgb), .21);
+        inset 0 0 26px rgba(var(--neon-rgb), .21);
     }
-
 
     /* =====================================================
        IMÁGENES
        ===================================================== */
 
     .img-container {
-
-      position:
-        relative;
-
-      height:
-        320px;
-
-      cursor:
-        pointer;
-
-      overflow:
-        hidden;
-
-      background:
-        #0c0c0e;
+      position: relative;
+      height: 320px;
+      cursor: pointer;
+      overflow: hidden;
+      background: #0c0c0e;
     }
 
-
     .img-container img {
-
-      width:
-        100%;
-
-      height:
-        100%;
-
-      object-fit:
-        cover;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
 
       transition:
-
         transform .65s ease,
-
         filter .55s ease;
     }
 
-
-    .gallery-item:hover
-    .img-container img {
-
-      transform:
-        scale(1.045);
+    .gallery-item:hover .img-container img {
+      transform: scale(1.045);
 
       filter:
-
         brightness(1.06)
-
         contrast(1.03)
-
         saturate(1.08);
     }
 
-
     .img-container::after {
-
       content: "";
-
-      position:
-        absolute;
-
-      inset:
-        0;
-
-      pointer-events:
-        none;
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
 
       background:
         linear-gradient(
@@ -769,104 +529,57 @@
           rgba(0, 0, 0, .22)
         );
 
-      transition:
-        .4s;
+      transition: .4s;
     }
 
-
-    .gallery-item:hover
-    .img-container::after {
-
+    .gallery-item:hover .img-container::after {
       box-shadow:
-        inset 0 0 28px
-        rgba(var(--neon-rgb), .11);
+        inset 0 0 28px rgba(var(--neon-rgb), .11);
     }
-
 
     /* =====================================================
        INFORMACIÓN
        ===================================================== */
 
     .info-prenda {
-
-      padding:
-        13px;
-
-      text-align:
-        center;
-
-      background:
-        rgba(0, 0, 0, .17);
-
-      flex-grow:
-        1;
+      padding: 13px;
+      text-align: center;
+      background: rgba(0, 0, 0, .17);
+      flex-grow: 1;
     }
 
-
     .info-prenda strong {
-
-      display:
-        block;
-
-      font-family:
-        'Cormorant Garamond',
-        serif;
-
-      font-size:
-        1.32rem;
-
-      color:
-        #f5e6cc;
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.32rem;
+      color: #f5e6cc;
 
       transition:
-
         color .35s ease,
-
         text-shadow .35s ease;
     }
 
-
-    .gallery-item:hover
-    .info-prenda strong {
-
-      color:
-        #fff;
+    .gallery-item:hover .info-prenda strong {
+      color: #fff;
 
       text-shadow:
-
-        0 0 7px
-        rgba(var(--neon-rgb), .82),
-
-        0 0 16px
-        rgba(var(--neon-rgb), .44);
+        0 0 7px rgba(var(--neon-rgb), .82),
+        0 0 16px rgba(var(--neon-rgb), .44);
     }
-
 
     .info-prenda small {
-
-      color:
-        #c5c0bc;
-
-      font-size:
-        .80rem;
-
-      display:
-        block;
-
-      margin-top:
-        5px;
-
-      line-height:
-        1.45;
+      color: #c5c0bc;
+      font-size: .80rem;
+      display: block;
+      margin-top: 5px;
+      line-height: 1.45;
     }
-
 
     /* =====================================================
        BOTÓN WHATSAPP
        ===================================================== */
 
     .btn-consulta {
-
       background:
         linear-gradient(
           135deg,
@@ -874,48 +587,25 @@
           #1ebe5d
         );
 
-      color:
-        white;
-
-      text-decoration:
-        none;
-
-      text-align:
-        center;
-
-      padding:
-        11px;
-
-      font-weight:
-        600;
-
-      font-size:
-        .85rem;
+      color: white;
+      text-decoration: none;
+      text-align: center;
+      padding: 11px;
+      font-weight: 600;
+      font-size: .85rem;
 
       transition:
-
         transform .3s ease,
-
         background .3s ease,
-
         box-shadow .3s ease;
 
-      display:
-        block;
-
-      border:
-        none;
-
-      position:
-        relative;
-
-      z-index:
-        2;
+      display: block;
+      border: none;
+      position: relative;
+      z-index: 2;
     }
 
-
     .btn-consulta:hover {
-
       background:
         linear-gradient(
           135deg,
@@ -924,128 +614,69 @@
         );
 
       box-shadow:
+        0 0 10px rgba(37, 211, 102, .58),
+        0 0 22px rgba(37, 211, 102, .24);
 
-        0 0 10px
-        rgba(37, 211, 102, .58),
-
-        0 0 22px
-        rgba(37, 211, 102, .24);
-
-      transform:
-        translateY(-1px);
+      transform: translateY(-1px);
     }
-
 
     /* =====================================================
        LIGHTBOX
        ===================================================== */
 
     #lightbox {
-
-      display:
-        none;
-
-      position:
-        fixed;
-
-      z-index:
-        1000;
-
-      top:
-        0;
-
-      left:
-        0;
-
-      width:
-        100%;
-
-      height:
-        100%;
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
 
       background:
         rgba(3, 4, 7, .97);
 
-      text-align:
-        center;
-
-      cursor:
-        zoom-out;
-
-      backdrop-filter:
-        blur(5px);
+      text-align: center;
+      cursor: zoom-out;
+      backdrop-filter: blur(5px);
     }
 
-
     #lightbox img {
-
-      max-width:
-        90%;
-
-      max-height:
-        80vh;
-
-      margin-top:
-        60px;
+      max-width: 90%;
+      max-height: 80vh;
+      margin-top: 60px;
 
       border:
         1px solid rgba(212, 175, 55, .72);
 
-      border-radius:
-        8px;
+      border-radius: 8px;
 
       box-shadow:
-
-        0 0 14px
-        rgba(212, 175, 55, .38),
-
-        0 0 35px
-        rgba(40, 210, 255, .11);
+        0 0 14px rgba(212, 175, 55, .38),
+        0 0 35px rgba(40, 210, 255, .11);
     }
 
-
     .close {
-
-      position:
-        absolute;
-
-      top:
-        15px;
-
-      right:
-        32px;
-
-      color:
-        #fff;
-
-      font-size:
-        48px;
-
-      cursor:
-        pointer;
+      position: absolute;
+      top: 15px;
+      right: 32px;
+      color: #fff;
+      font-size: 48px;
+      cursor: pointer;
 
       text-shadow:
         0 0 10px rgba(212, 175, 55, .65);
     }
-
 
     /* =====================================================
        FOOTER
        ===================================================== */
 
     footer {
-
-      text-align:
-        center;
-
-      padding:
-        42px 20px;
-
-      color:
-        #877b70;
-
-      font-size:
-        .82rem;
+      text-align: center;
+      padding: 42px 20px;
+      color: #877b70;
+      font-size: .82rem;
 
       border-top:
         1px solid rgba(212, 175, 55, .20);
@@ -1061,121 +692,105 @@
         0 -8px 28px rgba(0, 0, 0, .30);
     }
 
-
     footer a {
-
       transition:
         color .3s ease,
         text-shadow .3s ease;
     }
 
-
     footer a:hover {
-
       text-shadow:
         0 0 8px currentColor;
     }
-
 
     /* =====================================================
        CELULAR
        ===================================================== */
 
-    @media (max-width:600px) {
+    @media (max-width: 600px) {
 
       .info-box {
-
-        margin:
-          18px 12px 10px;
-
-        padding:
-          24px 15px;
+        margin: 18px 12px 10px;
+        padding: 24px 15px;
       }
-
 
       h1 {
-
-        font-size:
-          2.15rem;
+        font-size: 2.15rem;
       }
-
 
       .grid {
-
-        padding:
-          20px 14px 35px;
-
-        gap:
-          20px;
+        padding: 20px 14px 35px;
+        gap: 20px;
       }
-
 
       .img-container {
-
-        height:
-          340px;
+        height: 340px;
       }
-
 
       #lightbox img {
-
-        max-width:
-          94%;
-
-        margin-top:
-          80px;
+        max-width: 94%;
+        margin-top: 80px;
       }
-
     }
-
 
     /* Pantallas táctiles */
 
-    @media (hover:none) {
+    @media (hover: none) {
 
       .gallery-item {
-
         box-shadow:
-
-          0 7px 20px
-          rgba(0, 0, 0, .48),
-
-          0 0 13px
-          rgba(212, 175, 55, .12),
-
-          inset 0 0 12px
-          rgba(212, 175, 55, .05);
+          0 7px 20px rgba(0, 0, 0, .48),
+          0 0 13px rgba(212, 175, 55, .12),
+          inset 0 0 12px rgba(212, 175, 55, .05);
       }
-
     }
 
+    /* Reducir animaciones si el dispositivo lo solicita */
 
-    @media (prefers-reduced-motion:reduce) {
+    @media (prefers-reduced-motion: reduce) {
 
       *,
       *::before,
       *::after {
-
-        animation:
-          none !important;
-
-        transition-duration:
-          .01ms !important;
+        animation: none !important;
+        transition-duration: .01ms !important;
       }
-
     }
 
   </style>
-<script
-  src="https://cdn.counter.dev/script.js"
-  data-id="ddd285d0-34a0-487e-9239-9e7a9c467fcb"
-  data-utcoffset="-3">
-</script>
+
+  <!-- =====================================================
+       DATOS ESTRUCTURADOS SCHEMA.ORG
+       ===================================================== -->
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Galería de Trabajos | BR Confecciones",
+    "url": "https://brconfecciones.github.io/galeria.html",
+    "description": "Galería de confecciones, personalizaciones y trabajos a medida realizados por BR Confecciones.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "BR Confecciones",
+      "url": "https://brconfecciones.github.io/"
+    }
+  }
+  </script>
+
+  <!-- =====================================================
+       ESTADÍSTICAS COUNTER.DEV
+       ===================================================== -->
+
+  <script
+    src="https://cdn.counter.dev/script.js"
+    data-id="ddd285d0-34a0-487e-9239-9e7a9c467fcb"
+    data-utcoffset="-3">
+  </script>
+
 </head>
 
-
 <body>
-
 
   <!-- =====================================================
        VIDEO SUPERIOR
@@ -1202,7 +817,6 @@
 
   </div>
 
-
   <!-- =====================================================
        ENCABEZADO
        ===================================================== -->
@@ -1212,7 +826,6 @@
     <h1>
       Galería de Creaciones
     </h1>
-
 
     <div class="intro-galeria">
 
@@ -1226,7 +839,6 @@
       personalizaciones y trabajos a medida.
 
     </div>
-
 
     <div
       id="filtros"
@@ -1242,7 +854,6 @@
 
     </div>
 
-
     <a
       href="index.html"
       class="volver"
@@ -1251,7 +862,6 @@
     </a>
 
   </div>
-
 
   <!-- =====================================================
        GALERÍA DINÁMICA
@@ -1273,7 +883,6 @@
     </p>
 
   </div>
-
 
   <!-- =====================================================
        LIGHTBOX
@@ -1304,7 +913,6 @@
 
   </div>
 
-
   <!-- =====================================================
        FOOTER
        ===================================================== -->
@@ -1319,7 +927,6 @@
     © 2026
 
     <br><br>
-
 
     <small
       style="
@@ -1348,7 +955,6 @@
 
     </small>
 
-
     <div
       style="
         font-size:.85em;
@@ -1364,7 +970,6 @@
 
   </footer>
 
-
   <!-- =====================================================
        GOOGLE SHEETS
        ===================================================== -->
@@ -1374,17 +979,13 @@
     const SHEET_ID =
       '1fczLyhidq7xLFh6LwONnqn_uGoAqujCSGzTRfgKwxrA';
 
-
     const GID_GALERIA =
       '1717798500';
-
 
     const URL =
       `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&gid=${GID_GALERIA}&cache=update`;
 
-
     let todosLosTrabajos = [];
-
 
     /* =====================================================
        COLOR SEGÚN CATEGORÍA
@@ -1396,14 +997,12 @@
         (categoria || '')
         .toLowerCase();
 
-
       if (
         cat.includes('baile') ||
         cat.includes('danza')
       ) {
         return '255,70,170';
       }
-
 
       if (
         cat.includes('disfraz') ||
@@ -1412,13 +1011,11 @@
         return '210,75,255';
       }
 
-
       if (
         cat.includes('gastron')
       ) {
         return '255,160,55';
       }
-
 
       if (
         cat.includes('hogar') ||
@@ -1428,20 +1025,17 @@
         return '40,210,255';
       }
 
-
       if (
         cat.includes('educ')
       ) {
         return '70,155,255';
       }
 
-
       if (
         cat.includes('mascota')
       ) {
         return '70,230,175';
       }
-
 
       if (
         cat.includes('ropa') ||
@@ -1450,12 +1044,9 @@
         return '65,205,255';
       }
 
-
       /* Cualquier categoría nueva */
       return '212,175,55';
-
     }
-
 
     function seleccionarBoton(elemento) {
 
@@ -1465,13 +1056,10 @@
           b => b.classList.remove('active')
         );
 
-
       elemento
         .classList
         .add('active');
-
     }
-
 
     /* =====================================================
        CARGAR GALERÍA
@@ -1481,94 +1069,67 @@
 
       try {
 
-        /* Evita duplicados si se recarga la función */
-
         todosLosTrabajos = [];
-
 
         const res =
           await fetch(URL);
-
 
         if (!res.ok) {
 
           throw new Error(
             'No se pudo conectar con Google Sheets'
           );
-
         }
-
 
         const csv =
           await res.text();
-
 
         const filas =
           csv
           .split(/\r?\n/)
           .slice(1);
 
-
-        const contenedor =
-          document
-          .getElementById(
-            'grid-galeria'
-          );
-
-
         const filtroContainer =
           document
-          .getElementById(
-            'filtros'
-          );
-
+          .getElementById('filtros');
 
         let categoriasEncontradas =
           new Set();
 
-
         filas.forEach(
-          (linea) => {
-
+          linea => {
 
             const c =
               linea.split(
                 /,(?=(?:(?:[^"]*"){2})*[^"]*$)/
               );
 
-
-            if (c.length < 3)
+            if (c.length < 3) {
               return;
-
+            }
 
             const titulo =
               c[0]
               .replace(/"/g, '')
               .trim();
 
-
             const desc =
               c[1]
               .replace(/"/g, '')
               .trim();
-
 
             let imgRaw =
               c[2]
               .replace(/"/g, '')
               .trim();
 
-
             const cat =
               c[3]
-
-              ? c[3]
-                .replace(/"/g, '')
-                .trim()
-                .toLowerCase()
-
-              : 'otros';
-
+                ? c[3]
+                    .replace(/"/g, '')
+                    .trim()
+                    .toLowerCase()
+                : 'otros';
 
             if (
               cat !== 'otros' &&
@@ -1577,13 +1138,10 @@
 
               categoriasEncontradas
                 .add(cat);
-
             }
-
 
             let finalImg =
               imgRaw;
-
 
             if (
               imgRaw.includes(
@@ -1591,9 +1149,7 @@
               )
             ) {
 
-
               let driveID;
-
 
               if (
                 imgRaw.includes('id=')
@@ -1614,55 +1170,37 @@
                   imgRaw
                   .split('/d/')[1]
                   .split('/')[0];
-
               }
-
 
               if (driveID) {
 
                 finalImg =
                   `https://lh3.googleusercontent.com/u/0/d/${driveID}`;
-
               }
-
             }
 
-
             todosLosTrabajos.push({
-
               titulo,
               desc,
               img: finalImg,
               cat
-
             });
-
-
           }
         );
-
-
-        /* Crear botones de categorías */
 
         categoriasEncontradas
           .forEach(
             cat => {
 
-
               const btn =
                 document
-                .createElement(
-                  'button'
-                );
-
+                .createElement('button');
 
               btn.className =
                 'filter-btn';
 
-
               btn.innerText =
                 cat;
-
 
               btn.style
                 .setProperty(
@@ -1670,40 +1208,31 @@
                   obtenerNeon(cat)
                 );
 
-
               btn.onclick =
                 () => {
 
                   seleccionarBoton(btn);
 
                   filtrar(cat);
-
                 };
-
 
               filtroContainer
                 .appendChild(btn);
-
-
             }
           );
-
 
         mostrarGrilla(
           todosLosTrabajos
         );
 
-
       }
 
       catch (error) {
-
 
         console.error(
           'Error al cargar la galería:',
           error
         );
-
 
         document
           .getElementById(
@@ -1718,19 +1247,13 @@
                 color:#f5e6cc;
               "
             >
-
               No pudimos cargar la galería
               en este momento.
-
             </p>
 
           `;
-
-
       }
-
     }
-
 
     /* =====================================================
        MOSTRAR TARJETAS
@@ -1738,34 +1261,28 @@
 
     function mostrarGrilla(lista) {
 
-
       const contenedor =
         document
         .getElementById(
           'grid-galeria'
         );
 
-
       contenedor.innerHTML =
         lista.map(
           (t, index) => {
 
-
             const textoMensaje =
               `¡Hola BR Confecciones! Vi este trabajo en su galería y me encantó:\n\n*Producto:* ${t.titulo}\n*Detalles:* ${t.desc}`;
-
 
             const mensajeWsp =
               encodeURIComponent(
                 textoMensaje
               );
 
-
             const color =
               obtenerNeon(
                 t.cat
               );
-
 
             return `
 
@@ -1775,7 +1292,6 @@
                   --neon-rgb:${color};
                 "
               >
-
 
                 <div
                   class="img-container"
@@ -1789,7 +1305,6 @@
                   >
 
                 </div>
-
 
                 <div
                   class="info-prenda"
@@ -1805,28 +1320,21 @@
 
                 </div>
 
-
                 <a
                   href="https://wa.me/543548584454?text=${mensajeWsp}"
                   class="btn-consulta"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-
                   💬 Consultar por WhatsApp
-
                 </a>
-
 
               </div>
 
             `;
-
-
           }
         )
         .join('');
-
 
       /*
         Abrimos el lightbox desde JavaScript.
@@ -1841,38 +1349,28 @@
         .forEach(
           elemento => {
 
-
             elemento
               .addEventListener(
                 'click',
                 () => {
-
 
                   const indice =
                     Number(
                       elemento.dataset.index
                     );
 
-
                   const trabajo =
                     lista[indice];
-
 
                   abrirLB(
                     trabajo.img,
                     trabajo.titulo
                   );
-
-
                 }
               );
-
-
           }
         );
-
     }
-
 
     /* =====================================================
        FILTRAR
@@ -1880,36 +1378,25 @@
 
     function filtrar(cat) {
 
-
       if (
         cat === 'todos'
       ) {
 
-
         mostrarGrilla(
           todosLosTrabajos
         );
-
-
       }
 
       else {
 
-
         mostrarGrilla(
-
           todosLosTrabajos
-          .filter(
-            t => t.cat === cat
-          )
-
+            .filter(
+              t => t.cat === cat
+            )
         );
-
-
       }
-
     }
-
 
     /* =====================================================
        LIGHTBOX
@@ -1920,14 +1407,12 @@
       txt
     ) {
 
-
       document
         .getElementById(
           'lightbox-img'
         )
         .src =
           src;
-
 
       document
         .getElementById(
@@ -1936,20 +1421,15 @@
         .innerText =
           txt;
 
-
       document
         .getElementById(
           'lightbox'
         )
         .style.display =
           'block';
-
-
     }
 
-
     function cerrarLB() {
-
 
       document
         .getElementById(
@@ -1957,10 +1437,7 @@
         )
         .style.display =
           'none';
-
-
     }
-
 
     /* ESC para cerrar imagen */
 
@@ -1969,24 +1446,18 @@
         'keydown',
         event => {
 
-
           if (
             event.key === 'Escape'
           ) {
 
             cerrarLB();
-
           }
-
-
         }
       );
-
 
     cargarGaleria();
 
   </script>
-
 
 </body>
 

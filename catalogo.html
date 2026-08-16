@@ -19,13 +19,11 @@
 
   <meta name="robots" content="index, follow">
   <meta name="author" content="BR Confecciones">
-  <meta name="theme-color" content="#120d0b">
 
   <link
     rel="canonical"
     href="https://brconfecciones.github.io/catalogo.html"
   >
-
 
   <!-- =====================================================
        OPEN GRAPH
@@ -60,7 +58,6 @@
   <meta property="og:site_name" content="BR Confecciones">
   <meta property="og:locale" content="es_AR">
 
-
   <!-- =====================================================
        X / TWITTER
        ===================================================== -->
@@ -82,25 +79,20 @@
     content="https://brconfecciones.github.io/img/Logo1.jpg"
   >
 
+  <!-- =====================================================
+       ICONOS BR CONFECCIONES
+       ===================================================== -->
 
-  <!-- FAVICON ACTUAL -->
-  <title>Galería – BR Confecciones</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
 
-<!-- ICONOS BR CONFECCIONES -->
-<link rel="icon" href="favicon.ico" type="image/x-icon">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<link rel="manifest" href="site.webmanifest">
-<meta name="theme-color" content="#1b1410">
+  <meta name="theme-color" content="#1b1410">
 
-  <link
-    rel="icon"
-    href="favicon.ico"
-    type="image/x-icon"
-  >
-
-
-  <!-- FUENTES -->
+  <!-- =====================================================
+       FUENTES
+       ===================================================== -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -115,21 +107,17 @@
     rel="stylesheet"
   >
 
-
   <style>
 
     * {
       box-sizing: border-box;
     }
 
-
     html {
       scroll-behavior: smooth;
     }
 
-
     body {
-
       margin: 0;
 
       font-family:
@@ -137,11 +125,8 @@
         sans-serif;
 
       color: #fff;
-
       text-align: center;
-
       min-height: 100vh;
-
       overflow-x: hidden;
 
       background:
@@ -175,15 +160,12 @@
       position: relative;
     }
 
-
     /* =====================================================
        LUCES AMBIENTALES
        ===================================================== */
 
     body::before {
-
       content: "";
-
       position: fixed;
 
       width: 450px;
@@ -204,18 +186,14 @@
       filter: blur(20px);
 
       pointer-events: none;
-
       z-index: -1;
 
       animation:
         luzDorada 18s ease-in-out infinite alternate;
     }
 
-
     body::after {
-
       content: "";
-
       position: fixed;
 
       width: 480px;
@@ -236,13 +214,11 @@
       filter: blur(22px);
 
       pointer-events: none;
-
       z-index: -1;
 
       animation:
         luzAzul 16s ease-in-out infinite alternate;
     }
-
 
     @keyframes luzDorada {
 
@@ -255,9 +231,7 @@
         transform: translateY(45px) scale(1.08);
         opacity: 1;
       }
-
     }
-
 
     @keyframes luzAzul {
 
@@ -270,16 +244,13 @@
         transform: translateY(-35px) scale(1.08);
         opacity: 1;
       }
-
     }
-
 
     /* =====================================================
        CABECERA
        ===================================================== */
 
     header {
-
       max-width: 900px;
 
       margin:
@@ -305,27 +276,16 @@
         14px;
 
       box-shadow:
-
-        0 12px 30px
-        rgba(0, 0, 0, .52),
-
-        0 0 12px
-        rgba(212, 175, 55, .22),
-
-        0 0 28px
-        rgba(40, 210, 255, .07),
-
-        inset 0 0 18px
-        rgba(212, 175, 55, .06);
+        0 12px 30px rgba(0, 0, 0, .52),
+        0 0 12px rgba(212, 175, 55, .22),
+        0 0 28px rgba(40, 210, 255, .07),
+        inset 0 0 18px rgba(212, 175, 55, .06);
 
       position: relative;
-
       z-index: 1;
     }
 
-
     h1 {
-
       font-family:
         'Cormorant Garamond',
         serif;
@@ -340,17 +300,11 @@
         0 0 8px;
 
       text-shadow:
-
-        0 0 8px
-        rgba(212, 175, 55, .50),
-
-        0 0 20px
-        rgba(212, 175, 55, .18);
+        0 0 8px rgba(212, 175, 55, .50),
+        0 0 20px rgba(212, 175, 55, .18);
     }
 
-
     .intro-catalogo {
-
       color:
         #cdbda6;
 
@@ -367,9 +321,7 @@
         1.55;
     }
 
-
     .intro-catalogo strong {
-
       color:
         #f5e6cc;
 
@@ -377,13 +329,11 @@
         500;
     }
 
-
     /* =====================================================
        VOLVER
        ===================================================== */
 
     .volver {
-
       display:
         inline-block;
 
@@ -406,9 +356,7 @@
         .3s;
     }
 
-
     .volver:hover {
-
       opacity:
         1;
 
@@ -416,17 +364,14 @@
         #fff5db;
 
       text-shadow:
-        0 0 8px
-        rgba(212, 175, 55, .70);
+        0 0 8px rgba(212, 175, 55, .70);
     }
-
 
     /* =====================================================
        CONTENEDOR DE PRODUCTOS
        ===================================================== */
 
     .productos {
-
       display:
         flex;
 
@@ -452,13 +397,11 @@
         0 auto;
     }
 
-
     /* =====================================================
        TARJETAS
        ===================================================== */
 
     .card {
-
       --neon-rgb:
         212,175,55;
 
@@ -491,30 +434,17 @@
         relative;
 
       box-shadow:
-
-        0 10px 24px
-        rgba(0, 0, 0, .50),
-
-        0 0 11px
-        rgba(212, 175, 55, .10),
-
-        inset 0 0 12px
-        rgba(212, 175, 55, .04);
+        0 10px 24px rgba(0, 0, 0, .50),
+        0 0 11px rgba(212, 175, 55, .10),
+        inset 0 0 12px rgba(212, 175, 55, .04);
 
       transition:
-
         transform .38s ease,
-
         border-color .38s ease,
-
         box-shadow .38s ease;
     }
 
-
-    /* Luz dorada tenue permanente */
-
     .card::after {
-
       content: "";
 
       position:
@@ -533,16 +463,13 @@
         .23;
 
       box-shadow:
-        inset 0 0 20px
-        rgba(212, 175, 55, .14);
+        inset 0 0 20px rgba(212, 175, 55, .14);
 
       transition:
         .38s ease;
     }
 
-
     .card:hover {
-
       transform:
         translateY(-10px)
         scale(1.012);
@@ -551,41 +478,26 @@
         rgba(var(--neon-rgb), .94);
 
       box-shadow:
-
-        0 17px 36px
-        rgba(0, 0, 0, .60),
-
-        0 0 10px
-        rgba(var(--neon-rgb), .58),
-
-        0 0 24px
-        rgba(var(--neon-rgb), .33),
-
-        0 0 44px
-        rgba(var(--neon-rgb), .14),
-
-        inset 0 0 20px
-        rgba(var(--neon-rgb), .13);
+        0 17px 36px rgba(0, 0, 0, .60),
+        0 0 10px rgba(var(--neon-rgb), .58),
+        0 0 24px rgba(var(--neon-rgb), .33),
+        0 0 44px rgba(var(--neon-rgb), .14),
+        inset 0 0 20px rgba(var(--neon-rgb), .13);
     }
 
-
     .card:hover::after {
-
       opacity:
         .70;
 
       box-shadow:
-        inset 0 0 26px
-        rgba(var(--neon-rgb), .20);
+        inset 0 0 26px rgba(var(--neon-rgb), .20);
     }
-
 
     /* =====================================================
        IMAGEN DEL PRODUCTO
        ===================================================== */
 
     .card img {
-
       width:
         100%;
 
@@ -609,34 +521,25 @@
         block;
 
       transition:
-
         transform .60s ease,
-
         filter .50s ease;
     }
 
-
     .card:hover img {
-
       transform:
         scale(1.025);
 
       filter:
-
         brightness(1.07)
-
         contrast(1.03)
-
         saturate(1.08);
     }
-
 
     /* =====================================================
        INFORMACIÓN
        ===================================================== */
 
     .info {
-
       padding:
         20px;
 
@@ -659,9 +562,7 @@
         2;
     }
 
-
     .info h3 {
-
       font-family:
         'Cormorant Garamond',
         serif;
@@ -680,24 +581,16 @@
         text-shadow .35s ease;
     }
 
-
     .card:hover .info h3 {
-
       color:
         #fff;
 
       text-shadow:
-
-        0 0 7px
-        rgba(var(--neon-rgb), .82),
-
-        0 0 16px
-        rgba(var(--neon-rgb), .44);
+        0 0 7px rgba(var(--neon-rgb), .82),
+        0 0 16px rgba(var(--neon-rgb), .44);
     }
 
-
     .desc {
-
       font-size:
         .95rem;
 
@@ -714,13 +607,11 @@
         15px;
     }
 
-
     /* =====================================================
        PRECIO
        ===================================================== */
 
     .precio-contenedor {
-
       margin:
         10px 0 15px;
 
@@ -744,21 +635,15 @@
         text-shadow .35s ease;
     }
 
-
-    .card:hover
-    .precio-contenedor {
-
+    .card:hover .precio-contenedor {
       color:
         #f2d87c;
 
       text-shadow:
-        0 0 9px
-        rgba(var(--neon-rgb), .40);
+        0 0 9px rgba(var(--neon-rgb), .40);
     }
 
-
     .precio-etiqueta {
-
       font-size:
         .90rem;
 
@@ -769,9 +654,7 @@
         400;
     }
 
-
     .precio-monto {
-
       font-weight:
         600;
 
@@ -779,9 +662,7 @@
         1.50rem;
     }
 
-
     .precio-moneda {
-
       font-size:
         .85rem;
 
@@ -792,13 +673,11 @@
         .90;
     }
 
-
     /* =====================================================
        WHATSAPP
        ===================================================== */
 
     .btn-wsp {
-
       display:
         block;
 
@@ -828,21 +707,15 @@
         auto;
 
       transition:
-
         transform .30s ease,
-
         background .30s ease,
-
         box-shadow .30s ease;
 
       box-shadow:
-        0 4px 12px
-        rgba(0, 0, 0, .30);
+        0 4px 12px rgba(0, 0, 0, .30);
     }
 
-
     .btn-wsp:hover {
-
       background:
         linear-gradient(
           135deg,
@@ -854,21 +727,15 @@
         scale(1.035);
 
       box-shadow:
-
-        0 0 10px
-        rgba(37, 211, 102, .58),
-
-        0 0 22px
-        rgba(37, 211, 102, .24);
+        0 0 10px rgba(37, 211, 102, .58),
+        0 0 22px rgba(37, 211, 102, .24);
     }
-
 
     /* =====================================================
        FOOTER
        ===================================================== */
 
     footer {
-
       padding:
         42px 20px;
 
@@ -889,19 +756,16 @@
         );
 
       box-shadow:
-        0 -8px 28px
-        rgba(0, 0, 0, .30);
+        0 -8px 28px rgba(0, 0, 0, .30);
     }
-
 
     /* =====================================================
        CELULAR
        ===================================================== */
 
-    @media (max-width:600px) {
+    @media (max-width: 600px) {
 
       header {
-
         margin:
           18px 12px 8px;
 
@@ -909,16 +773,12 @@
           25px 15px;
       }
 
-
       h1 {
-
         font-size:
           2.20rem;
       }
 
-
       .productos {
-
         padding:
           28px 14px 40px;
 
@@ -926,9 +786,7 @@
           22px;
       }
 
-
       .card {
-
         width:
           100%;
 
@@ -936,65 +794,73 @@
           340px;
       }
 
-
       .card img {
-
         height:
           390px;
       }
-
     }
-
 
     /* En celulares no dependemos del hover */
 
-    @media (hover:none) {
+    @media (hover: none) {
 
       .card {
-
         box-shadow:
-
-          0 8px 22px
-          rgba(0, 0, 0, .50),
-
-          0 0 13px
-          rgba(212, 175, 55, .12),
-
-          inset 0 0 12px
-          rgba(212, 175, 55, .05);
+          0 8px 22px rgba(0, 0, 0, .50),
+          0 0 13px rgba(212, 175, 55, .12),
+          inset 0 0 12px rgba(212, 175, 55, .05);
       }
-
     }
-
 
     /* Reducir animaciones si el dispositivo lo solicita */
 
-    @media (prefers-reduced-motion:reduce) {
+    @media (prefers-reduced-motion: reduce) {
 
       *,
       *::before,
       *::after {
-
         animation:
           none !important;
 
         transition-duration:
           .01ms !important;
       }
-
     }
 
   </style>
-<script
-  src="https://cdn.counter.dev/script.js"
-  data-id="ddd285d0-34a0-487e-9239-9e7a9c467fcb"
-  data-utcoffset="-3">
-</script>
+
+  <!-- =====================================================
+       DATOS ESTRUCTURADOS SCHEMA.ORG
+       ===================================================== -->
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Catálogo | BR Confecciones",
+    "url": "https://brconfecciones.github.io/catalogo.html",
+    "description": "Catálogo de productos y trabajos de confección de BR Confecciones, con consulta directa por WhatsApp.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "BR Confecciones",
+      "url": "https://brconfecciones.github.io/"
+    }
+  }
+  </script>
+
+  <!-- =====================================================
+       ESTADÍSTICAS COUNTER.DEV
+       ===================================================== -->
+
+  <script
+    src="https://cdn.counter.dev/script.js"
+    data-id="ddd285d0-34a0-487e-9239-9e7a9c467fcb"
+    data-utcoffset="-3">
+  </script>
+
 </head>
 
-
 <body>
-
 
   <!-- =====================================================
        CABECERA
@@ -1005,7 +871,6 @@
     <h1>
       Catálogo BR Confecciones
     </h1>
-
 
     <div class="intro-catalogo">
 
@@ -1022,7 +887,6 @@
 
     </div>
 
-
     <a
       href="index.html"
       class="volver"
@@ -1031,7 +895,6 @@
     </a>
 
   </header>
-
 
   <!-- =====================================================
        PRODUCTOS
@@ -1049,13 +912,10 @@
         font-size:1.5rem;
       "
     >
-
       Abriendo el taller...
-
     </p>
 
   </div>
-
 
   <!-- =====================================================
        FOOTER
@@ -1076,14 +936,11 @@
         color:#b8a580;
       "
     >
-
       ¿Buscás algo diferente?
       Contanos tu idea.
-
     </div>
 
   </footer>
-
 
   <!-- =====================================================
        GOOGLE SHEETS
@@ -1094,64 +951,49 @@
     const SHEET_ID =
       '1fczLyhidq7xLFh6LwONnqn_uGoAqujCSGzTRfgKwxrA';
 
-
     const URL =
       `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&gid=0`;
-
 
     /*
       Colores para las tarjetas.
 
-      No dependen del nombre del producto.
-      Se van alternando automáticamente.
+      Se alternan automáticamente.
       Si agregás productos nuevos a Sheets,
       también reciben uno de estos colores.
     */
 
     const COLORES_NEON = [
 
-      '40,210,255',    // cyan
-
-      '210,75,255',    // violeta
-
-      '255,70,170',    // magenta
-
-      '255,160,55',    // ámbar
-
-      '70,230,175',    // verde agua
-
-      '70,155,255'     // azul
+      '40,210,255',
+      '210,75,255',
+      '255,70,170',
+      '255,160,55',
+      '70,230,175',
+      '70,155,255'
 
     ];
-
 
     async function cargarCatalogo() {
 
       try {
 
-
         const respuesta =
           await fetch(URL);
-
 
         if (!respuesta.ok) {
 
           throw new Error(
             'No se pudo conectar con Google Sheets'
           );
-
         }
-
 
         const csv =
           await respuesta.text();
-
 
         const filas =
           csv
           .split(/\r?\n/)
           .slice(1);
-
 
         const contenedor =
           document
@@ -1159,52 +1001,43 @@
             'contenedor-productos'
           );
 
-
         let htmlFinal =
           '';
-
 
         let indiceActivo =
           0;
 
-
         filas.forEach(
           linea => {
-
 
             const c =
               linea.split(
                 /,(?=(?:(?:[^"]*"){2})*[^"]*$)/
               );
 
-
-            if (c.length < 5)
+            if (c.length < 5) {
               return;
-
+            }
 
             const nombre =
               c[0]
               .replace(/"/g, '')
               .trim();
 
-
             const precioBruto =
               c[1]
               .replace(/"/g, '')
               .trim();
-
 
             const desc =
               c[2]
               .replace(/"/g, '')
               .trim();
 
-
             let imgRaw =
               c[3]
               .replace(/"/g, '')
               .trim();
-
 
             const estado =
               c[4]
@@ -1212,13 +1045,11 @@
               .trim()
               .toLowerCase();
 
-
             /* Solamente mostramos productos activos */
 
             if (
               estado === 'activo'
             ) {
-
 
               const precioLimpio =
                 precioBruto
@@ -1226,10 +1057,8 @@
                 .replace(/ARS/gi, '')
                 .trim();
 
-
               let finalImg =
                 imgRaw;
-
 
               /*
                 Conversión automática
@@ -1242,9 +1071,7 @@
                 )
               ) {
 
-
                 let id;
-
 
                 if (
                   imgRaw.includes('id=')
@@ -1254,9 +1081,7 @@
                     imgRaw
                     .split('id=')[1]
                     .split('&')[0];
-
                 }
-
 
                 else if (
                   imgRaw.includes('/d/')
@@ -1266,24 +1091,16 @@
                     imgRaw
                     .split('/d/')[1]
                     .split('/')[0];
-
                 }
-
 
                 if (id) {
 
                   finalImg =
                     `https://lh3.googleusercontent.com/u/0/d/${id}`;
-
                 }
-
               }
 
-
-              /*
-                Elegimos automáticamente
-                un color para la tarjeta.
-              */
+              /* Color automático */
 
               const color =
                 COLORES_NEON[
@@ -1291,22 +1108,18 @@
                   COLORES_NEON.length
                 ];
 
-
               /*
                 WhatsApp contextual:
-                ahora además del nombre
-                incluimos la descripción.
+                producto + descripción
               */
 
               const mensaje =
                 `¡Hola BR Confecciones! Vi este producto en su catálogo y quería consultar:\n\n*Producto:* ${nombre}\n*Detalles:* ${desc}`;
 
-
               const mensajeWsp =
                 encodeURIComponent(
                   mensaje
                 );
-
 
               htmlFinal += `
 
@@ -1317,16 +1130,13 @@
                   "
                 >
 
-
                   <img
                     src="${finalImg}"
                     alt="${nombre}"
                     loading="lazy"
                   >
 
-
                   <div class="info">
-
 
                     <div>
 
@@ -1340,9 +1150,7 @@
 
                     </div>
 
-
                     <div>
-
 
                       <div
                         class="precio-contenedor"
@@ -1368,37 +1176,27 @@
 
                       </div>
 
-
                       <a
                         href="https://wa.me/543548584454?text=${mensajeWsp}"
                         class="btn-wsp"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-
                         💬 Consultar por WhatsApp
-
                       </a>
-
 
                     </div>
 
-
                   </div>
-
 
                 </div>
 
               `;
 
-
               indiceActivo++;
-
             }
-
           }
         );
-
 
         contenedor.innerHTML =
           htmlFinal ||
@@ -1412,25 +1210,20 @@
                 font-size:1.4rem;
               "
             >
-
               No hay productos activos
               en este momento.
-
             </p>
 
           `;
-
 
       }
 
       catch (error) {
 
-
         console.error(
           'Error al cargar el catálogo:',
           error
         );
-
 
         document
           .getElementById(
@@ -1445,25 +1238,18 @@
                 font-size:1.4rem;
               "
             >
-
               No pudimos conectar
               con el catálogo
               en este momento.
-
             </p>
 
           `;
-
-
       }
-
     }
-
 
     cargarCatalogo();
 
   </script>
-
 
 </body>
 
